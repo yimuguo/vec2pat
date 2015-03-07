@@ -7,8 +7,13 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "vec2pat", "vec2pat.pyproj",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EBB5544-7A42-443B-AB67-9C22B4B38B54}"
 	ProjectSection(SolutionItems) = preProject
+		clk910_100.txt = clk910_100.txt
+		clk910_150.txt = clk910_150.txt
+		clk910_200.txt = clk910_200.txt
 		clk910_50.txt = clk910_50.txt
-		pat.txt = pat.txt
+		pat0to207.txt = pat0to207.txt
+		pat0to208.txt = pat0to208.txt
+		pat51to100.txt = pat51to100.txt
 		vec.txt = vec.txt
 	EndProjectSection
 EndProject

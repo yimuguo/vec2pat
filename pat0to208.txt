@@ -2,7 +2,40 @@ import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
 
 vector       ( $tset, CSCL, CSDA)
 {
-start_label Write_B0_to_B50:
+start_label Write_B0_to_B208:
+			> noop		1	1;
+repeat_10	> noop		1	1;
+			> bstar		1	1;
+I2C Slave Address:						//D0
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Prowrite_CMD:							//00
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Start_write_byte:							//0
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
 write_byte_0:							//00
 			> wridt		1	0;
 			>	-		1	0;
@@ -2083,93 +2116,7 @@ write_byte_207:							//B6
 			>	-		1	1;
 			>	-		1	0;
 			> sack		1	L;
-0;
-			> sack		1	L;
-write_byte_181:							//00
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			> sack		1	L;
-write_byte_182:							//00
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			> sack		1	L;
-write_byte_183:							//00
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			> sack		1	L;
-write_byte_184:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			> sack		1	L;
-write_byte_185:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			> sack		1	L;
-write_byte_186:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			> sack		1	L;
-write_byte_187:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			> sack		1	L;
-write_byte_188:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			> sack		1	L;
-write_byte_189:							//11
-			> wridt		1	0;
-			>	-		1	0;
-			>	-		1	0;
-			>	-		1	1;
-			>	-		1	0;
-			>	-		1	0;
-			>
+repeat_5	> noop		1	1;
+halt		>	-		-	-;
+			>	-		-	-;
+}
