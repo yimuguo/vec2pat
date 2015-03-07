@@ -28,6 +28,14 @@ for x in binlist:
 
 
 ########Write Binary Data to Pattern Format
+def write8b(name,list,file):
+    pat=open(file,'a+')
+    pat.write('%s:\t\t\t\t//%s\n' % (name)
+    pat.write('\t\t\t> wridt\t1\t%s;\n' % list[0])
+    i=0
+    for i in range(1,len(list)):
+        pat.write('\t\t\t>\t-\t\t1\t%s;\n' % list[i])
+        i+=1
 
 def bytex2y(x,y):
     address='D4'
@@ -38,18 +46,22 @@ def bytex2y(x,y):
     pat.write('\n')
     pat.write('vector       ( $tset, CSCL, CSDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
     pat.write('\t\t\t> noop\t\t1\t1;\nrepeat_10\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\nI2C Slave Address:\t\t\t\t\t\t//%s\n' % address)
+
     pat.writelines('\t\t\t> wridt\t\t1\t%s;\n' % item for item in add_bin_split)
     pat.write('\t\t\t> sack\t\t1\tL;\n')
+    
     pat.write('Prowrite_CMD:\t\t\t\t\t\t\t//00\n' )
     prowrite=bin(int('00',16))[2:].zfill(8)
     prowrite_split=re.findall('.',prowrite)
     pat.writelines('\t\t\t> wridt\t\t1\t%s;\n' % item for item in prowrite_split)
     pat.write('\t\t\t> sack\t\t1\tL;\n')
+    
     pat.write('Start_write_byte:\t\t\t\t\t\t\t//%s\n' % x)
     startadd="{0:b}".format(int(x)).zfill(8)
     startadd_split=re.findall('.',prowrite)
     pat.writelines('\t\t\t> wridt\t\t1\t%s;\n' % item for item in startadd)
     pat.write('\t\t\t> sack\t\t1\tL;\n')
+    
     i=x
     for i in xrange(x,y):
         pat.write('write_byte_%d:\t\t\t\t\t\t\t//%s\n\t\t\t> wridt\t\t1\t%s;\n' % (i,hexlist[i],l[i][0]))
