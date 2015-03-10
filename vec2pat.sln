@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		pat0to207.txt = pat0to207.txt
 		pat0to208.txt = pat0to208.txt
 		pat51to100.txt = pat51to100.txt
+		pat51to101.txt = pat51to101.txt
 		vec.txt = vec.txt
 	EndProjectSection
 EndProject
