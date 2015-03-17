@@ -4,9 +4,9 @@ vector       ( $tset, CSCL, CSDA)
 {
 start_label Write_B51_to_B101:
 			> noop		1	1;
-repeat_10	> noop		1	1;
+repeat 10	> noop		1	1;
 			> bstar		1	1;
-Slave Adress:				
+Slave_address:					//D4
 			> wridt		1	1;
 			> wridt		1	1;
 			> wridt		1	0;
@@ -16,7 +16,7 @@ Slave Adress:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-Prowrite_CMD:				
+Prowrite_CMD:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -26,7 +26,7 @@ Prowrite_CMD:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-Start_write_byte:				
+Start_w_byte:					//51
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -36,7 +36,7 @@ Start_write_byte:
 			> wridt		1	1;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_51:				
+write_byte_51:					//05
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -46,7 +46,7 @@ write_byte_51:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_52:				
+write_byte_52:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -56,7 +56,7 @@ write_byte_52:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_53:				
+write_byte_53:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -66,7 +66,7 @@ write_byte_53:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_54:				
+write_byte_54:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -76,7 +76,7 @@ write_byte_54:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_55:				
+write_byte_55:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -86,7 +86,7 @@ write_byte_55:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_56:				
+write_byte_56:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -96,7 +96,7 @@ write_byte_56:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_57:				
+write_byte_57:					//0D
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -106,7 +106,7 @@ write_byte_57:
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_58:				
+write_byte_58:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -116,7 +116,7 @@ write_byte_58:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_59:				
+write_byte_59:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -126,7 +126,7 @@ write_byte_59:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_60:				
+write_byte_60:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -136,7 +136,7 @@ write_byte_60:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_61:				
+write_byte_61:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -146,7 +146,7 @@ write_byte_61:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_62:				
+write_byte_62:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -156,7 +156,7 @@ write_byte_62:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_63:				
+write_byte_63:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -166,7 +166,7 @@ write_byte_63:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_64:				
+write_byte_64:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -176,7 +176,7 @@ write_byte_64:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_65:				
+write_byte_65:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -186,7 +186,7 @@ write_byte_65:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_66:				
+write_byte_66:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -196,7 +196,7 @@ write_byte_66:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_67:				
+write_byte_67:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -206,7 +206,7 @@ write_byte_67:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_68:				
+write_byte_68:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -216,7 +216,7 @@ write_byte_68:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_69:				
+write_byte_69:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -226,7 +226,7 @@ write_byte_69:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_70:				
+write_byte_70:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -236,7 +236,7 @@ write_byte_70:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_71:				
+write_byte_71:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -246,7 +246,7 @@ write_byte_71:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_72:				
+write_byte_72:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -256,7 +256,7 @@ write_byte_72:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_73:				
+write_byte_73:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -266,7 +266,7 @@ write_byte_73:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_74:				
+write_byte_74:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -276,7 +276,7 @@ write_byte_74:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_75:				
+write_byte_75:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -286,7 +286,7 @@ write_byte_75:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_76:				
+write_byte_76:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -296,7 +296,7 @@ write_byte_76:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_77:				
+write_byte_77:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -306,7 +306,7 @@ write_byte_77:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_78:				
+write_byte_78:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -316,7 +316,7 @@ write_byte_78:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_79:				
+write_byte_79:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -326,7 +326,7 @@ write_byte_79:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_80:				
+write_byte_80:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -336,7 +336,7 @@ write_byte_80:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_81:				
+write_byte_81:					//A0
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
@@ -346,7 +346,7 @@ write_byte_81:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_82:				
+write_byte_82:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -356,7 +356,7 @@ write_byte_82:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_83:				
+write_byte_83:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -366,7 +366,7 @@ write_byte_83:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_84:				
+write_byte_84:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -376,7 +376,7 @@ write_byte_84:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_85:				
+write_byte_85:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -386,7 +386,7 @@ write_byte_85:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_86:				
+write_byte_86:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -396,7 +396,7 @@ write_byte_86:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_87:				
+write_byte_87:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -406,7 +406,7 @@ write_byte_87:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_88:				
+write_byte_88:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -416,7 +416,7 @@ write_byte_88:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_89:				
+write_byte_89:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -426,7 +426,7 @@ write_byte_89:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_90:				
+write_byte_90:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -436,7 +436,7 @@ write_byte_90:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_91:				
+write_byte_91:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -446,7 +446,7 @@ write_byte_91:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_92:				
+write_byte_92:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -456,7 +456,7 @@ write_byte_92:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_93:				
+write_byte_93:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -466,7 +466,7 @@ write_byte_93:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_94:				
+write_byte_94:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -476,7 +476,7 @@ write_byte_94:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_95:				
+write_byte_95:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -486,7 +486,7 @@ write_byte_95:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_96:				
+write_byte_96:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -496,7 +496,7 @@ write_byte_96:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_97:				
+write_byte_97:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -506,7 +506,7 @@ write_byte_97:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_98:				
+write_byte_98:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -516,7 +516,7 @@ write_byte_98:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_99:				
+write_byte_99:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -526,7 +526,7 @@ write_byte_99:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_100:				
+write_byte_100:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -536,7 +536,8 @@ write_byte_100:
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-repeat_5	> noop		1	1;
+			> bstop		1	0;
+repeat 5	> noop		1	1;
 halt		>	-		-	-;
 			>	-		-	-;
 }
