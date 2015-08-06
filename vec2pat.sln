@@ -5,20 +5,6 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "vec2pat", "vec2pat.pyproj", "{8094103D-F197-47F9-AB7B-CA96AF2053B8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7EBB5544-7A42-443B-AB67-9C22B4B38B54}"
-	ProjectSection(SolutionItems) = preProject
-		clk910_100.txt = clk910_100.txt
-		clk910_150.txt = clk910_150.txt
-		clk910_200.txt = clk910_200.txt
-		clk910_50.txt = clk910_50.txt
-		pat0to207.txt = pat0to207.txt
-		pat0to208.txt = pat0to208.txt
-		pat51to100.txt = pat51to100.txt
-		pat51to101.atp = pat51to101.atp
-		pat51to101.txt = pat51to101.txt
-		vec.txt = vec.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

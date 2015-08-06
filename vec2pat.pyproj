@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8094103d-f197-47f9-ab7b-ca96af2053b8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>vec2pat.py</StartupFile>
+    <StartupFile>VC5_910\reg2pat_910.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -24,10 +24,32 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="vec2pat.py" />
+    <Compile Include="VC5_910\reg2pat_910.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WriteBytes\" />
+    <Folder Include="VC5_910\" />
+    <Folder Include="VC5_910\pattern\" />
+    <Folder Include="VC5_910\registerhex_910\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VC5_910\pattern\clk910_100.PAT" />
+    <Content Include="VC5_910\pattern\clk910_100.txt" />
+    <Content Include="VC5_910\pattern\clk910_150.txt" />
+    <Content Include="VC5_910\pattern\clk910_200.txt" />
+    <Content Include="VC5_910\pattern\clk910_50.txt" />
+    <Content Include="VC5_910\pattern\pat.txt" />
+    <Content Include="VC5_910\pattern\pat0to207.txt" />
+    <Content Include="VC5_910\pattern\pat0to208.atp" />
+    <Content Include="VC5_910\pattern\pat51to100.txt" />
+    <Content Include="VC5_910\pattern\pat51to101.atp" />
+    <Content Include="VC5_910\pattern\pat51to101.PAT" />
+    <Content Include="VC5_910\pattern\pat51to101.txt" />
+    <Content Include="VC5_910\pattern\reverse.atp" />
+    <Content Include="VC5_910\registerhex_910\vec.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

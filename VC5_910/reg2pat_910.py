@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import re
-vec_file='vec.txt'
+vec_file=".\\VC5_910\\registerhex_910\\vec.txt"
 with open(vec_file,'r') as vec_data:
     vec=vec_data.read().splitlines()
 vec=vec[0]
@@ -34,7 +34,7 @@ del vec
 def bytex2y(x,y):
     startbit=int(x)
     address='D4'
-    pat=open('pat%sto%s.atp' %(x,y),'w+')
+    pat=open('.\\VC5_910\\patterns\\register%sto%s.atp' %(x,y),'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
     pat.write('vector       ( $tset, CSCL, CSDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
