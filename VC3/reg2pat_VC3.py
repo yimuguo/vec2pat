@@ -1,9 +1,22 @@
 ﻿#!/usr/bin/python
 import re
-vec_file = ".\\VC5_910\\registerhex_910\\vec.txt"
-with open(vec_file, 'r') as vec_data:
-    vec = vec_data.read().splitlines()
-vec = vec[0]
+import os
+import sys
+# vec_file = "..\\VC5_910\\registerhex_910\\vec.txt"
+
+for file in os.listdir(".\\code\\"):
+    if file.endswith(".txt"):
+        ConfigFile = open(os.path.join(".\\code\\", file), encoding='utf_16_be')
+        vec_data = ConfigFile.readlines()
+        print(vec_data)
+        break
+    else:
+        sys.exit('No Configuration File in Code Folder')
+
+with open(ConfigFile, 'r') as vec_data:
+    for line in open(vec_data, 'r'):
+        if line[:12] == "<Binary Hex=" and len(line) > 800:
+            hexlist = re.findall('..', line)
 
 # Write Binary Data to Pattern Format
 
@@ -30,14 +43,12 @@ def write8b(name, hexinput, pat):
     pat.write('\t\t\t> sack\t\t1\tL;\n')
 
 ######## Get all vector seperated into list#######
-hexlist = re.findall('..', vec)
-del vec
 
 
 def bytex2y(x, y):
     startbit = int(x)
     address = 'D4'
-    pat = open('.\\VC5_910\\pattern\\register%sto%s.atp' % (x, y), 'w+')
+    pat = open('.\\patterns\\register%sto%s.atp' % (x, y), 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
     pat.write('vector       ( $tset, CSCL, CSDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
