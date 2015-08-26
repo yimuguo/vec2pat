@@ -2,12 +2,14 @@
 import re
 import os
 import sys
+import struct
 # vec_file = "..\\VC5_910\\registerhex_910\\vec.txt"
 
 for file in os.listdir(".\\code\\"):
     if file.endswith(".txt"):
-        ConfigFile = open(os.path.join(".\\code\\", file), encoding='utf_16_be')
-        vec_data = ConfigFile.readlines()
+        ConfigFile = open(os.path.join(".\\code\\", file), 'rb')
+        vec_data = ConfigFile.read()
+        string = struct.unpack('s', vec_data)
         print(vec_data)
         break
     else:
