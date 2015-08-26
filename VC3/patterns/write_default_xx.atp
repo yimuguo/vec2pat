@@ -1,0 +1,93 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+vector     ( $tset, SCL, SDA, all_SE)
+{
+start_label writedefaultxx:
+           > noop   1    1    XXXXX  ; 
+repeat 10  
+           > noop   1    1    XXXXX  ; 
+           > bstar  1    1    XXXXX  ; 
+           > wridt  1    1    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+wbyte_0:
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+wbyte_1:
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+wbyte_2:
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+wbyte_3:
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+wbyte_4:
+           > wridt  1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    0    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > -      1    1    XXXXX  ; 
+           > sack   1    L    XXXXX  ; 
+           > bstop  1    0    XXXXX  ; 
+           > noop   1    1    XXXXX  ; 
+halt       
+           > -      -    -    XXXXX  ; 
+           > -      -    -    XXXXX  ; 
+}
+

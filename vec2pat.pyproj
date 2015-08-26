@@ -30,12 +30,28 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="VC3\" />
+    <Folder Include="VC3\patterns\" />
+    <Folder Include="VC3\sample_code\" />
     <Folder Include="WriteBytes\" />
     <Folder Include="VC5_910\" />
     <Folder Include="VC5_910\pattern\" />
     <Folder Include="VC5_910\registerhex_910\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="VC3\patterns\read_default_10.atp" />
+    <Content Include="VC3\patterns\read_default_100.atp" />
+    <Content Include="VC3\patterns\read_default_150.atp" />
+    <Content Include="VC3\patterns\read_default_200.atp" />
+    <Content Include="VC3\patterns\read_default_50.atp" />
+    <Content Include="VC3\patterns\write_default_100.atp" />
+    <Content Include="VC3\patterns\write_default_150.atp" />
+    <Content Include="VC3\patterns\write_default_200.atp" />
+    <Content Include="VC3\patterns\write_default_50.atp" />
+    <Content Include="VC3\patterns\write_default_xx.atp" />
+    <Content Include="VC3\patterns\write_testcode_50.atp" />
+    <Content Include="VC3\sample_code\5V49EE503-207_Cr#3_F.txt" />
+    <Content Include="VC3\sample_code\5V49EE503-207_Cr#3_F.xml" />
     <Content Include="VC5_910\pattern\clk910_100.PAT" />
     <Content Include="VC5_910\pattern\clk910_100.txt" />
     <Content Include="VC5_910\pattern\clk910_150.txt" />

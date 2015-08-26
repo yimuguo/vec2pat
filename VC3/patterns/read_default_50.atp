@@ -1,0 +1,577 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+vector              ( $tset, SCL, SDA,all_SE)
+{
+start_label readdefault50:
+                    > noop   1    1   XXXXX  ; 
+repeat 10, clr_fail 
+                    > noop   1    1   XXXXX  ; 
+                    > bstar  1    1   XXXXX  ; 
+                    > wridt  1    1   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > sack   1    L   XXXXX  ; 
+/* prowrite cmd = 00*/
+                    > wridt  1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > sack   1    L   XXXXX  ; 
+/* off = 00*/
+                    > wridt  1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > sack   1    L   XXXXX  ; 
+/* Re-Start */
+                    > noop   1    1   XXXXX  ; 
+                    > bstar  1    1   XXXXX  ; 
+                    > wridt  1    1   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > -      1    0   XXXXX  ; 
+                    > -      1    1   XXXXX  ; 
+                    > sack   1    L   XXXXX  ; 
+/* ID byte */
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    H   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > readt  1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_0_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_1_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_2_84:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_3_6:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_4_15:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_5_4:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_6_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_7_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_8_120:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_9_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_10_0:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_11_0:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_12_0:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_13_17:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_14_162:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_15_162:
+                    > readt  1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_16_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_17_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_18_2:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_19_2:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_20_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_21_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_22_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_23_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_24_1:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_25_1:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_26_36:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_27_36:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_28_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_29_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_30_48:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_31_48:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_32_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_33_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    H   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_34_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_35_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_36_16:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_37_16:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_38_16:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_39_16:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_40_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_41_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_42_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_43_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_44_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_45_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_46_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_47_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_48_0:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_49_1:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > mack   1    0   XXXXX  ; 
+rbyte_50_1:
+                    > readt  1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > -      1    L   XXXXX  ; 
+                    > nack   1    1   XXXXX  ; 
+                    > bstop  1    0   XXXXX  ; 
+                    > noop   1    1   XXXXX  ; 
+halt                
+                    > -      -    -   XXXXX  ; 
+                    > -      -    -   XXXXX  ; 
+}
+
