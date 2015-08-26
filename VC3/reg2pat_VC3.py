@@ -2,23 +2,23 @@
 import re
 import os
 import sys
-import struct
 # vec_file = "..\\VC5_910\\registerhex_910\\vec.txt"
+
 
 for file in os.listdir(".\\code\\"):
     if file.endswith(".txt"):
-        ConfigFile = open(os.path.join(".\\code\\", file), 'rb')
+        ConfigFile = open(os.path.join(".\\code\\", file), mode = 'rb')
         vec_data = ConfigFile.read()
-        string = struct.unpack('s', vec_data)
-        print(vec_data)
+        vec_string = vec_data.decode('utf-16')
+        vec_data = vec_string.split('\r\n')
         break
     else:
         sys.exit('No Configuration File in Code Folder')
+        
+for line in vec_data:
+    if line[:12] == "<Binary Hex=" and len(line) > 400:
+        hexlist = re.findall('..', line[13:-3])
 
-with open(ConfigFile, 'r') as vec_data:
-    for line in open(vec_data, 'r'):
-        if line[:12] == "<Binary Hex=" and len(line) > 800:
-            hexlist = re.findall('..', line)
 
 # Write Binary Data to Pattern Format
 
@@ -44,7 +44,7 @@ def write8b(name, hexinput, pat):
     pat.writelines('\t\t\t> wridt\t\t1\t%s;\n' % item for item in binlist)
     pat.write('\t\t\t> sack\t\t1\tL;\n')
 
-######## Get all vector seperated into list#######
+######## Get all vector separated into list#######
 
 
 def bytex2y(x, y):
@@ -66,10 +66,12 @@ def bytex2y(x, y):
     pat.write('\t\t\t> bstop\t\t1\t0;\n')
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
+
+
 #bytex2y(0,208)
-#bytex2y(0,51)
+bytex2y(0,51)
 bytex2y(51, 101)
-#bytex2y(101,150)
-#bytex2y(150,200)
+bytex2y(101,150)
+bytex2y(150,208)
 #bytex2y(200,208)
 #print l

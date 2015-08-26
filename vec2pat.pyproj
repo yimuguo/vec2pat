@@ -36,7 +36,6 @@
     <Folder Include="VC3\" />
     <Folder Include="VC3\code\" />
     <Folder Include="VC3\patterns\" />
-    <Folder Include="VC3\sample_code\" />
     <Folder Include="WriteBytes\" />
     <Folder Include="VC5_910\" />
     <Folder Include="VC5_910\pattern\" />
@@ -50,14 +49,16 @@
     <Content Include="VC3\patterns\read_default_150.atp" />
     <Content Include="VC3\patterns\read_default_200.atp" />
     <Content Include="VC3\patterns\read_default_50.atp" />
+    <Content Include="VC3\patterns\register0to51.atp" />
+    <Content Include="VC3\patterns\register101to150.atp" />
+    <Content Include="VC3\patterns\register150to208.atp" />
+    <Content Include="VC3\patterns\register51to101.atp" />
     <Content Include="VC3\patterns\write_default_100.atp" />
     <Content Include="VC3\patterns\write_default_150.atp" />
     <Content Include="VC3\patterns\write_default_200.atp" />
     <Content Include="VC3\patterns\write_default_50.atp" />
     <Content Include="VC3\patterns\write_default_xx.atp" />
     <Content Include="VC3\patterns\write_testcode_50.atp" />
-    <Content Include="VC3\sample_code\5V49EE503-207_Cr#3_F.txt" />
-    <Content Include="VC3\sample_code\5V49EE503-207_Cr#3_F.xml" />
     <Content Include="VC5_910\pattern\clk910_100.PAT" />
     <Content Include="VC5_910\pattern\clk910_100.txt" />
     <Content Include="VC5_910\pattern\clk910_150.txt" />
