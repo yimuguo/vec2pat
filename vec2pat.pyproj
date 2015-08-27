@@ -49,10 +49,6 @@
     <Content Include="VC3\patterns\read_default_150.atp" />
     <Content Include="VC3\patterns\read_default_200.atp" />
     <Content Include="VC3\patterns\read_default_50.atp" />
-    <Content Include="VC3\patterns\register0to51.atp" />
-    <Content Include="VC3\patterns\register101to150.atp" />
-    <Content Include="VC3\patterns\register150to208.atp" />
-    <Content Include="VC3\patterns\register51to101.atp" />
     <Content Include="VC3\patterns\write_default_100.atp" />
     <Content Include="VC3\patterns\write_default_150.atp" />
     <Content Include="VC3\patterns\write_default_200.atp" />
