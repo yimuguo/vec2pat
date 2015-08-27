@@ -186,8 +186,5 @@ FakesAssemblies/
 # LightSwitch generated files
 GeneratedArtifacts/
 _Pvt_Extensions/
+.idea/
 ModelManifest.xml
-.idea/workspace.xml
-.idea/misc.xml
-.idea/workspace.xml
-.idea/misc.xml
