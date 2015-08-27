@@ -44,11 +44,19 @@
   <ItemGroup>
     <Content Include="VC3\code\5V49EE503-207_Cr#3_F.txt" />
     <Content Include="VC3\code\5V49EE503-207_Cr#3_F.xml" />
+    <Content Include="VC3\patterns\read0to51.atp" />
+    <Content Include="VC3\patterns\read101to150.atp" />
+    <Content Include="VC3\patterns\read150to208.atp" />
+    <Content Include="VC3\patterns\read51to101.atp" />
     <Content Include="VC3\patterns\read_default_10.atp" />
     <Content Include="VC3\patterns\read_default_100.atp" />
     <Content Include="VC3\patterns\read_default_150.atp" />
     <Content Include="VC3\patterns\read_default_200.atp" />
     <Content Include="VC3\patterns\read_default_50.atp" />
+    <Content Include="VC3\patterns\write0to51.atp" />
+    <Content Include="VC3\patterns\write101to150.atp" />
+    <Content Include="VC3\patterns\write150to208.atp" />
+    <Content Include="VC3\patterns\write51to101.atp" />
     <Content Include="VC3\patterns\write_default_100.atp" />
     <Content Include="VC3\patterns\write_default_150.atp" />
     <Content Include="VC3\patterns\write_default_200.atp" />

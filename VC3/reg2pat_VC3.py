@@ -58,9 +58,23 @@ def read8b(name, hexinput, pat):
     if type(hexinput) is str:
         y = bin(int(hexinput, 16))[2:].zfill(8)
         binlist = re.findall('.', y)
+        for n,i in enumerate(binlist):
+            if i == '1':
+                binlist[n] = 'H'
+            elif i == '0':
+                binlist[n] = 'L'
+            else:
+                sys.exit("Hex String Convert Error")
     elif type(hexinput) is int:
         y = "{0:b}".format(hexinput).zfill(8)
         binlist = re.findall('.', y)
+        for n,i in enumerate(binlist):
+            if i==1:
+                binlist[n] = 'H'
+            elif i==0:
+                binlist[n] = 'L'
+            else:
+                sys.exit("Hex String Convert Error")
     else:
         print('Input type wrong, either string or number')
     for x in binlist:
@@ -74,7 +88,9 @@ def read8b(name, hexinput, pat):
 def writeregx2y(x, y):
     startbit = int(x)
     address = 'D4'
-    pat = open('.\\patterns\\write%sto%s.atp' % (x, y), 'w+')
+    pat_file = '.\\patterns\\read%sto%s.atp' % (x, y)
+    os.makedirs(os.path.dirname(pat_file), exist_ok = True)
+    pat = open(pat_file, 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
     pat.write('vector       ( $tset, CSCL, CSDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
@@ -102,7 +118,9 @@ writeregx2y(150,208)
 def readregx2y(x, y):
     startbit = int(x)
     address = 'D4'
-    pat = open('.\\patterns\\read%sto%s.atp' % (x, y), 'w+')
+
+    pat = open('.\\patterns\\write%sto%s.atp' % (x, y), 'w+')
+
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
     pat.write('vector       ( $tset, CSCL, CSDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
@@ -112,8 +130,8 @@ def readregx2y(x, y):
     write8b('Prowrite_CMD', '00', pat)
     write8b('Start_r_byte', startbit, pat)
     pat.write('\t\t\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
-    write8b('Restart','D5',pat)
-
+    write8b('Restart','D5', pat)
+    read8b('ID_Byte', '10', pat)
     i = x
     for i in range(x, y):
         read8b('read_byte_%d' % i, hexlist[i], pat)
@@ -122,4 +140,7 @@ def readregx2y(x, y):
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
 
+readregx2y(0,51)
 readregx2y(51,101)
+readregx2y(101,150)
+readregx2y(150,208)

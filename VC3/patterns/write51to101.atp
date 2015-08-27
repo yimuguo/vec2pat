@@ -1,0 +1,565 @@
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+
+vector       ( $tset, CSCL, CSDA)
+{
+start_label Write_B51_to_B101:
+			> noop		1	1;
+repeat 10	> noop		1	1;
+			> bstar		1	1;
+Slave_address:					//D4
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Prowrite_CMD:					//00
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Start_r_byte:					//51
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+			> noop		1	1;
+			> bstar		1	1;
+Restart:					//D5
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+ID_Byte:					//10
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_51:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_52:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_53:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_54:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_55:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_56:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_57:					//B0
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_58:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_59:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_60:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_61:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_62:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_63:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_64:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_65:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_66:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_67:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_68:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_69:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_70:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_71:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_72:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_73:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_74:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_75:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_76:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_77:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_78:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_79:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_80:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_81:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_82:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_83:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_84:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_85:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_86:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_87:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_88:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_89:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_90:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_91:					//9F
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_92:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_93:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_94:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_95:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_96:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_97:					//3E
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_98:					//6F
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_99:					//6F
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_100:					//6F
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+			> bstop		1	0;
+repeat 5	> noop		1	1;
+halt		>	-		-	-;
+			>	-		-	-;
+}
