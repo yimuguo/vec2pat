@@ -44,7 +44,9 @@ def write8b(name, hexinput, pat):
     pat.writelines('\t\t\t> wridt\t\t1\t%s;\n' % item for item in binlist)
     pat.write('\t\t\t> sack\t\t1\tL;\n')
 
+
 ######## Get all vector separated into list#######
+
 
 def read8b(name, hexinput, pat):
     binlist = []
@@ -68,10 +70,10 @@ def read8b(name, hexinput, pat):
     elif type(hexinput) is int:
         y = "{0:b}".format(hexinput).zfill(8)
         binlist = re.findall('.', y)
-        for n,i in enumerate(binlist):
-            if i==1:
+        for n, i in enumerate(binlist):
+            if i == 1:
                 binlist[n] = 'H'
-            elif i==0:
+            elif i == 0:
                 binlist[n] = 'L'
             else:
                 sys.exit("Hex String Convert Error")
@@ -108,7 +110,6 @@ def writeregx2y(x, y):
     pat.close()
 
 
-
 writeregx2y(0,51)
 writeregx2y(51, 101)
 writeregx2y(101,150)
@@ -140,7 +141,7 @@ def readregx2y(x, y):
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
 
-readregx2y(0,51)
-readregx2y(51,101)
-readregx2y(101,150)
-readregx2y(150,208)
+readregx2y(0, 51)
+readregx2y(51, 101)
+readregx2y(101, 150)
+readregx2y(150, 208)
