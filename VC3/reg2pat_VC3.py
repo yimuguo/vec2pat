@@ -91,7 +91,7 @@ def writeregx2y(x, y):
     startbit = int(x)
     address = 'D4'
     pat_file = '.\\patterns\\read%sto%s.atp' % (x, y)
-    os.makedirs(os.path.dirname(pat_file), exist_ok = True)
+    os.makedirs(os.path.dirname(pat_file), exist_ok=True)
     pat = open(pat_file, 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
@@ -110,10 +110,10 @@ def writeregx2y(x, y):
     pat.close()
 
 
-writeregx2y(0,51)
+writeregx2y(0, 51)
 writeregx2y(51, 101)
-writeregx2y(101,150)
-writeregx2y(150,208)
+writeregx2y(101, 150)
+writeregx2y(150, 208)
 
 
 def readregx2y(x, y):
