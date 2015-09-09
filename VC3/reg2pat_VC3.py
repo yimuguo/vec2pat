@@ -128,7 +128,12 @@ def readregx2y(x, y):
     write8b('Restart', 'D5', pat)
     read8b('ID_Byte', '10', pat)
     for i in range(x, y-1):
-        read8b('read_byte_%d' % i, hexlist[i], pat)
+        if 82 <= i <= 85:
+            read8b('read_byte_%d' % i, hexlist[81], pat)
+        elif 124 <= i <= 127:
+            read8b('read_byte_%d' % i, hexlist[123], pat)
+        else:
+            read8b('read_byte_%d' % i, hexlist[i], pat)
     last_hex = bin(int(hexlist[y-1], 16))[2:].zfill(8)
     last_byte = re.findall('.', last_hex)
     for n, i in enumerate(last_byte):

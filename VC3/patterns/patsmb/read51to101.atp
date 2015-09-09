@@ -368,40 +368,40 @@ read_byte_81:					//20
 			> readt		1	L;
 			> readt		1	L;
 			> mack		1	0;
-read_byte_82:					//00
+read_byte_82:					//20
 			> readt		1	L;
 			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
-			> mack		1	0;
-read_byte_83:					//00
-			> readt		1	L;
-			> readt		1	L;
-			> readt		1	L;
+			> readt		1	H;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> mack		1	0;
-read_byte_84:					//00
+read_byte_83:					//20
 			> readt		1	L;
 			> readt		1	L;
-			> readt		1	L;
+			> readt		1	H;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
 			> mack		1	0;
-read_byte_85:					//00
+read_byte_84:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_85:					//20
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
 			> readt		1	L;
 			> readt		1	L;
 			> readt		1	L;
