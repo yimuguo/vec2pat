@@ -87,7 +87,7 @@ def read8b(name, hexinput, pat):
 def writeregx2y(x, y):
     startbit = int(x)
     address = 'D4'
-    pat_file = '.\\patterns\\write%sto%s.atp' % (x, y)
+    pat_file = '.\\patterns\\patsmb\\write%sto%s.atp' % (x, y)
     os.makedirs(os.path.dirname(pat_file), exist_ok=True)
     pat = open(pat_file, 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
@@ -114,7 +114,7 @@ writeregx2y(150, 208)
 def readregx2y(x, y):
     startbit = int(x)
     address = 'D4'
-    pat = open('.\\patterns\\read%sto%s.atp' % (x, y), 'w+')
+    pat = open('.\\patterns\\patsmb\\read%sto%s.atp' % (x, y), 'w+')
 
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
