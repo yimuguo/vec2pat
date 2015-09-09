@@ -1,6 +1,6 @@
 import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
 
-vector       ( $tset, CSCL, CSDA)
+vector       ( $tset, SCL, SDA)
 {
 start_label Write_B0_to_B51:
 			> noop		1	1;
@@ -26,7 +26,7 @@ Prowrite_CMD:					//00
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-Start_w_byte:					//0
+Start_r_byte:					//0
 			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	0;
@@ -36,518 +36,407 @@ Start_w_byte:					//0
 			> wridt		1	0;
 			> wridt		1	0;
 			> sack		1	L;
-write_byte_0:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_1:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_2:					//84
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_3:					//06
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
+			> noop		1	1;
+			> bstar		1	1;
+Restart:					//D5
 			> wridt		1	1;
 			> wridt		1	1;
 			> wridt		1	0;
-			> sack		1	L;
-write_byte_4:					//0F
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
 			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_5:					//04
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_6:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_7:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_8:					//78
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_9:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_10:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_11:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_12:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_13:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_14:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_15:					//93
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_16:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
 			> wridt		1	0;
 			> wridt		1	1;
 			> wridt		1	0;
 			> wridt		1	1;
 			> sack		1	L;
-write_byte_17:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_18:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_19:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_20:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_21:					//05
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	1;
-			> sack		1	L;
-write_byte_22:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_23:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_24:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_25:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_26:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_27:					//40
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_28:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_29:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_30:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_31:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_32:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_33:					//30
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	1;
-			> wridt		1	1;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_34:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_35:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_36:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_37:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_38:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_39:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_40:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_41:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_42:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_43:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_44:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_45:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_46:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_47:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_48:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_49:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-write_byte_50:					//00
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> wridt		1	0;
-			> sack		1	L;
-			> bstop		1	0;
-repeat 5	> noop		1	1;
-halt		>	-		-	-;
-			>	-		-	-;
-}
+ID_Byte:					//10
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_0:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_1:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_2:					//84
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_3:					//06
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_4:					//0F
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_5:					//04
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_6:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_7:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_8:					//78
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_9:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_10:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_11:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_12:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_13:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_14:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_15:					//93
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_16:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_17:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_18:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_19:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_20:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_21:					//05
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	H;
+			> mack		1	0;
+read_byte_22:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_23:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_24:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_25:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_26:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_27:					//40
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_28:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_29:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_30:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_31:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_32:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_33:					//30
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	H;
+			> readt		1	H;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_34:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_35:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_36:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_37:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_38:					//00
+			> readt		1	L;
