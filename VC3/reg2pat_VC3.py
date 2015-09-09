@@ -114,7 +114,6 @@ writeregx2y(150, 208)
 def readregx2y(x, y):
     startbit = int(x)
     address = 'D4'
-
     pat = open('.\\patterns\\read%sto%s.atp' % (x, y), 'w+')
 
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
@@ -128,11 +127,23 @@ def readregx2y(x, y):
     pat.write('\t\t\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
     write8b('Restart', 'D5', pat)
     read8b('ID_Byte', '10', pat)
-    for i in range(x, y):
+    for i in range(x, y-1):
         read8b('read_byte_%d' % i, hexlist[i], pat)
-    del pat[-1]
+    last_hex = bin(int(hexlist[y-1], 16))[2:].zfill(8)
+    last_byte = re.findall('.', last_hex)
+    for n, i in enumerate(last_byte):
+        if i == '1':
+            last_byte[n] = 'H'
+        elif i == '0':
+            last_byte[n] = 'L'
+        else:
+            sys.exit("Last Byte Wrong")
+    pat.write('%s:\t\t\t\t\t//%s\n' % ('read_byte_%d' % (y - 1), hexlist[y-1]))
+    pat.writelines('\t\t\t> readt\t\t1\t%s;\n' % item for item in last_byte)
+    pat.write('\t\t\t> nack\t\t1\t1;\n')
+
     pat.write('\t\t\t> bstop\t\t1\t0;\n')
-    pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
+    pat.write('\t\t\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
 
 readregx2y(0, 51)

@@ -440,3 +440,136 @@ read_byte_37:					//00
 			> mack		1	0;
 read_byte_38:					//00
 			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_39:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_40:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_41:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_42:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_43:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_44:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_45:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_46:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_47:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_48:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_49:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> mack		1	0;
+read_byte_50:					//00
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> readt		1	L;
+			> nack		1	1;
+			> bstop		1	0;
+			> noop		1	1;
+halt		>	-		-	-;
+			>	-		-	-;
+}
