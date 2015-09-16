@@ -13,7 +13,7 @@ for file in os.listdir(".\\code\\"):
         break
     else:
         sys.exit('No Configuration File in Code Folder')
-
+globals(vec_data)
 for line in vec_data:
     if line[:12] == "<Binary Hex=" and len(line) > 400:
         hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
@@ -44,7 +44,7 @@ def write8b(name, hexinput, pat):
     pat.write('\t\t\t> sack\t\t1\tL;\n')
 
 
-######## Get all vector separated into list#######
+# Get all vector separated into list
 
 
 def read8b(name, hexinput, pat):
