@@ -1,27 +1,27 @@
-﻿#!/usr/bin/python
+﻿
 import os
 import sys
-# vec_file = "..\\VC5_910\\registerhex_910\\vec.txt"
 
 
-for file in os.listdir(".\\code\\"):
-    if file.endswith(".txt"):
-        ConfigFile = open(os.path.join(".\\code\\", file), mode='rb')
-        vec_data = ConfigFile.read()
-        vec_string = vec_data.decode('utf-16')
-        vec_data = vec_string.split('\r\n')
-        break
-    else:
-        sys.exit('No Configuration File in Code Folder')
-globals(vec_data)
-for line in vec_data:
-    if line[:12] == "<Binary Hex=" and len(line) > 400:
-        hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
+try:
+    for file in os.listdir(".\\code\\"):
+        if file.endswith(".txt"):
+            ConfigFile = open(os.path.join(".\\code\\", file), mode='rb')
+            vec_data = ConfigFile.read()
+            vec_string = vec_data.decode('utf-16')
+            vec_data = vec_string.split('\r\n')
+            break
+except RuntimeError:
+    sys.exit('No Configuration File in Code Folder')
 
+try:
+    for line in vec_data:
+        if line[:12] == "<Binary Hex=" and len(line) > 400:
+            hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
+except RuntimeError:
+    sys.exit('')
 
 # Write Binary Data to Pattern Format
-
-
 def write8b(name, hexinput, pat):
     binlist = []
     '''
