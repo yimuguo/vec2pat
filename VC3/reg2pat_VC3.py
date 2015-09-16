@@ -1,5 +1,4 @@
 ﻿#!/usr/bin/python
-import re
 import os
 import sys
 # vec_file = "..\\VC5_910\\registerhex_910\\vec.txt"
@@ -7,7 +6,7 @@ import sys
 
 for file in os.listdir(".\\code\\"):
     if file.endswith(".txt"):
-        ConfigFile = open(os.path.join(".\\code\\", file), mode = 'rb')
+        ConfigFile = open(os.path.join(".\\code\\", file), mode='rb')
         vec_data = ConfigFile.read()
         vec_string = vec_data.decode('utf-16')
         vec_data = vec_string.split('\r\n')
@@ -17,7 +16,7 @@ for file in os.listdir(".\\code\\"):
 
 for line in vec_data:
     if line[:12] == "<Binary Hex=" and len(line) > 400:
-        print(map(''.join, zip(*[iter(line[13:-3])]*2)))
+        hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
 
 
 # Write Binary Data to Pattern Format
@@ -60,7 +59,7 @@ def read8b(name, hexinput, pat):
     if type(hexinput) is str:
         y = bin(int(hexinput, 16))[2:].zfill(8)
         binlist = list(y)
-        for n,i in enumerate(binlist):
+        for n, i in enumerate(binlist):
             if i == '1':
                 binlist[n] = 'H'
             elif i == '0':
@@ -92,7 +91,7 @@ def writeregx2y(x, y):
     pat = open(pat_file, 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
-    pat.write('vector       ( $tset, SCL, SDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x,y))
+    pat.write('vector       ( $tset, SCL, SDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x, y))
     pat.write('\t\t\t> noop\t\t1\t1;\nrepeat 10\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
 
     write8b('Slave_address', address, pat)
@@ -127,14 +126,14 @@ def readregx2y(x, y):
     pat.write('\t\t\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
     write8b('Restart', 'D5', pat)
     read8b('ID_Byte', '10', pat)
-    for i in range(x, y-1):
+    for i in range(x, y - 1):
         if 82 <= i <= 85:
             read8b('read_byte_%d' % i, hexlist[81], pat)
         elif 124 <= i <= 127:
             read8b('read_byte_%d' % i, hexlist[123], pat)
         else:
             read8b('read_byte_%d' % i, hexlist[i], pat)
-    last_hex = bin(int(hexlist[y-1], 16))[2:].zfill(8)
+    last_hex = bin(int(hexlist[y - 1], 16))[2:].zfill(8)
     last_byte = list(last_hex)
     for n, i in enumerate(last_byte):
         if i == '1':
@@ -143,13 +142,14 @@ def readregx2y(x, y):
             last_byte[n] = 'L'
         else:
             sys.exit("Last Byte Wrong")
-    pat.write('%s:\t\t\t\t\t//%s\n' % ('read_byte_%d' % (y - 1), hexlist[y-1]))
+    pat.write('%s:\t\t\t\t\t//%s\n' % ('read_byte_%d' % (y - 1), hexlist[y - 1]))
     pat.writelines('\t\t\t> readt\t\t1\t%s;\n' % item for item in last_byte)
     pat.write('\t\t\t> nack\t\t1\t1;\n')
 
     pat.write('\t\t\t> bstop\t\t1\t0;\n')
     pat.write('\t\t\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
+
 
 readregx2y(0, 51)
 readregx2y(51, 101)
