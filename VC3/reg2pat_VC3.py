@@ -14,10 +14,10 @@ for file in os.listdir(".\\code\\"):
         break
     else:
         sys.exit('No Configuration File in Code Folder')
-        
+
 for line in vec_data:
     if line[:12] == "<Binary Hex=" and len(line) > 400:
-        hexlist = re.findall('..', line[13:-3])
+        print(map(''.join, zip(*[iter(line[13:-3])]*2)))
 
 
 # Write Binary Data to Pattern Format
@@ -34,10 +34,10 @@ def write8b(name, hexinput, pat):
     '''
     if type(hexinput) is str:
         y = bin(int(hexinput, 16))[2:].zfill(8)
-        binlist = re.findall('.', y)
+        binlist = list(y)
     elif type(hexinput) is int:
         y = "{0:b}".format(hexinput).zfill(8)
-        binlist = re.findall('.', y)
+        binlist = list(y)
     else:
         print('Input type wrong, either string or number')
     pat.write('%s:\t\t\t\t\t//%s\n' % (name, hexinput))
@@ -59,7 +59,7 @@ def read8b(name, hexinput, pat):
     '''
     if type(hexinput) is str:
         y = bin(int(hexinput, 16))[2:].zfill(8)
-        binlist = re.findall('.', y)
+        binlist = list(y)
         for n,i in enumerate(binlist):
             if i == '1':
                 binlist[n] = 'H'
@@ -69,7 +69,7 @@ def read8b(name, hexinput, pat):
                 sys.exit("Hex String Convert Error")
     elif type(hexinput) is int:
         y = "{0:b}".format(hexinput).zfill(8)
-        binlist = re.findall('.', y)
+        binlist = list(y)
         for n, i in enumerate(binlist):
             if i == 1:
                 binlist[n] = 'H'
@@ -135,7 +135,7 @@ def readregx2y(x, y):
         else:
             read8b('read_byte_%d' % i, hexlist[i], pat)
     last_hex = bin(int(hexlist[y-1], 16))[2:].zfill(8)
-    last_byte = re.findall('.', last_hex)
+    last_byte = list(last_hex)
     for n, i in enumerate(last_byte):
         if i == '1':
             last_byte[n] = 'H'
