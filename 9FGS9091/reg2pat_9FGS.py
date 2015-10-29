@@ -60,26 +60,27 @@ def write8b(name, hexinput, pat):
     pat.write('\t\t\t> sack\t\t1\tL;\n')
 
 
-def writeregx2y(x, y):
-    startbit = int(x)
-    address = 'D0'
-    pat_file = '.\\patterns\\patdc\\write%sto%s.atp' % (x, y)
+def reg2pat(patname, hexlist, i2c_address='D0', startbyte=0, stopbyte='all'):
+    # startbit = int(x)
+    if stopbyte == 'all':
+        stopbyte = len(hexlist)
+    pat_file = '.\\patterns\\' + i2c_address + '\\' + patname + '.atp'
     os.makedirs(os.path.dirname(pat_file), exist_ok=True)
     pat = open(pat_file, 'w+')
     pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
     pat.write('\n')
-    pat.write('vector       ( $tset, SCL, SDA)\n{\nstart_label Write_B%s_to_B%s:\n' % (x, y))
-    pat.write('\t\t\t> noop\t\t1\t1;\nrepeat 10\t\t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
+    pat.write('vector       ( $tset, SCL, SDA)\n{\nstart_label Write_%s:\n' % patname)
+    pat.write('\t\t\t> noop\t\t1\t1;\nrepeat 10 \t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
 
-    write8b('Slave_address', address, pat)
-    # write8b('Prowrite_CMD', '00', pat)
-    write8b('Start_w_byte', startbit, pat)
-    for i in range(x, y):
+    write8b('Slave_address', i2c_address, pat)
+    # write8b('Prowrite_CMD', '00', pat) for VC3 write mode
+    write8b('Start_w_byte', int(startbyte), pat)
+    for i in range(int(startbyte), int(stopbyte)):
         write8b('write_byte_%d' % i, hexlist[i], pat)
     pat.write('\t\t\t> bstop\t\t1\t0;\n')
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
 
-hexlist = ['00', '5F', '87', '78', '44', '87', '78', '44', '87', '78', '44', '87', '78', '44']
-writeregx2y(1, 14)
+OutputHiZ = ['00', '5F', '87', '78', '44', '87', '78', '44', '87', '78', '44', '87', '78', '44']
+reg2pat('OutputHiz', OutputHiZ, 'D0', 1)
 
