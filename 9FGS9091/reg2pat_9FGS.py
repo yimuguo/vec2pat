@@ -1,4 +1,5 @@
 import os
+import sys
 __author__ = 'yguo'
 
 
@@ -80,7 +81,7 @@ def reg2pat(patname, hexlist, i2c_address='D0', startbyte=0, stopbyte='all'):
     pat.write('\t\t\t> bstop\t\t1\t0;\n')
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
-
 OutputHiZ = ['00', '5F', '87', '78', '44', '87', '78', '44', '87', '78', '44', '87', '78', '44']
 reg2pat('OutputHiz', OutputHiZ, 'D0', 1)
+sys.exit()
 
