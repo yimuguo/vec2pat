@@ -69,11 +69,23 @@ def bytex2y(x, y):
 bytex2y(0, 51)
 bytex2y(51, 101)
 bytex2y(101, 150)
-bytex2y(150, 200)
-bytex2y(200, 208)
+bytex2y(150, 208)
 
 os.chdir('.')
 for prg_file in glob.glob("*FT*.xls"):
     workbook = prg_file
-call('apc register*.atp -digital_inst hsd100200 -extended -pinmap_workbook ' + workbook)
-os.system('\"apc register*.atp -digital_inst hsd100200 -extended -pinmap_workbook \"' + '\"' + workbook + '\"')
+print("Compiling against " + workbook)
+# call('apc register*.atp -digital_inst hsd100200 -extended -pinmap_workbook ' + workbook)
+compile_command = "apc .\\patternsD4\\code910\\register*.atp " \
+                  "-digital_inst hsd100200 " \
+                  "-suppress_log " \
+                  "-extended " \
+                  "-pinmap_workbook "\
+                  + workbook
+os.system(compile_command)
+os.chdir('.\\patternsD4\\code910\\')
+del_flag = input("Delete Logs and ATP files? Y/N\n")
+if del_flag == 'Y' or 'y':
+    os.system("del *.atp")
+    os.system("del *.log")
+input("press enter to exit")
