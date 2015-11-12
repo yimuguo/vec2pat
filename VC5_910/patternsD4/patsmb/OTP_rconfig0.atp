@@ -1,0 +1,1104 @@
+import tset bstar, bstop, wridt, readt, sack, mack, nack,noop;
+
+vector ($tset, SCLsel0,SDAsel1 ) 
+{
+start_label OTP_rconfig0: 
+                      > noop    1 1  ;
+repeat 10             > noop    1 1  ;
+                      > bstar   1 1  ;
+                      > wridt   1 1  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > sack    1 L  ;
+/* off = 00*/
+                      > wridt   1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > -       1 0  ;
+                      > sack    1 L  ;
+/* Re-Start */
+                      > noop    1 1  ;
+                      > bstar   1 1  ;
+                      > wridt   1 1  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 1  ;
+                      > -       1 0  ;
+                      > -       1 1  ;
+                      > sack    1 L  ;
+rbyte_0:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_1:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_2:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_3:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_4:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_5:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_6:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_7:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_8:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_9:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_10:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_11:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_12:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_13:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_14:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_15:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_16:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_17:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_18:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_19:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_20:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_21:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_22:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_23:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_24:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_25:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_26:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_27:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_28:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_29:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_30:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_31:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_32:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_33:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_34:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_35:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_36:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_37:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_38:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_39:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_40:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_41:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_42:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_43:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_44:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_45:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_46:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_47:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_48:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_49:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_50:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_51:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_52:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_53:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_54:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_55:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_56:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_57:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_58:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_59:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_60:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_61:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_62:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_63:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_64:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_65:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_66:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_67:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_68:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_69:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_70:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_71:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_72:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_73:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_74:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_75:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_76:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_77:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_78:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_79:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_80:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_81:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_82:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_83:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_84:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_85:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_86:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_87:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_88:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_89:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_90:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_91:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_92:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_93:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_94:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_95:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_96:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_97:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_98:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_99:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_100:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_101:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_102:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_103:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_104:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > mack    1 0  ;
+rbyte_105:
+                      > readt   1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > -       1 H  ;
+                      > nack    1 1  ;
+                      > bstop   1 0  ;
+                      > noop    1 1  ;
+halt                  > -       - -  ;
+                      > -       - -  ;
+}

@@ -1,0 +1,70 @@
+                         Flow Step  Line    Total    PreBody    Body    PostBody
+                      PreJob Reset  0000  0.010168
+                            Opcode  0005  0.001605
+                              PPST  0006  0.046085  0.017908  0.027530  0.000648
+                          Cont2gnd  0007  0.032407
+                          Cont2vdd  0008  0.024824
+                        OTP_Config  0009  1.060923
+                   Readdflt33_cfgs  0010  0.060913
+                       VCOBandTrim  0011  1.572054
+                  Check_VCO_Margin  0012  0.288839
+                          PMT_func  0013  0.103802
+                    GrossFuncMin33  0014  0.185554
+                    GrossFuncMax33  0015  0.221914
+                    GrossFuncMin25  0016  0.054606
+                    GrossFuncMax25  0017  0.082531
+                    GrossFuncMin18  0018  0.053479
+                    GrossFuncMax18  0019  0.081386
+                            OEfunc  0020  0.087688
+                    TIA_FOD_Spread  0021  1.822974
+                     IDD33_dynamic  0022  0.137130
+                          IDD33_3s  0023  0.070315
+                          IDD33_SD  0024  0.092207
+                          LDO_3333  0025  0.073516
+                       VOLH_HCSL25  0026  0.062923
+                        IOS_LVDS33  0027  0.068799
+                            VOLH33  0028  0.074555
+                            VOLH18  0029  0.082622
+                     OutputLeakage  0030  0.041523
+                      InputLeakage  0031  0.034429
+                            Opcode  0032  0.007287
+                     PostJob Reset  9998  0.004798
+
+                        Entire Job  9999  6.541859
+
+
+                         Flow Step  Line    Total    PreBody    Body    PostBody
+                      PreJob Reset  0000  0.009266
+                            Opcode  0005  0.001070
+                              PPST  0006  0.045971  0.017853  0.027469  0.000650
+                          Cont2gnd  0007  0.030664
+                          Cont2vdd  0008  0.025653
+                        OTP_Config  0009  1.060792
+                   Readdflt33_cfgs  0010  0.061108
+                       VCOBandTrim  0011  1.572673
+                  Check_VCO_Margin  0012  0.289850
+                          PMT_func  0013  0.103696
+                    GrossFuncMin33  0014  0.185763
+                    GrossFuncMax33  0015  0.222265
+                    GrossFuncMin25  0016  0.054616
+                    GrossFuncMax25  0017  0.082639
+                    GrossFuncMin18  0018  0.053575
+                    GrossFuncMax18  0019  0.081375
+                            OEfunc  0020  0.087232
+                    TIA_FOD_Spread  0021  1.822688
+                     IDD33_dynamic  0022  0.136978
+                          IDD33_3s  0023  0.070178
+                          IDD33_SD  0024  0.092063
+                          LDO_3333  0025  0.073568
+                       VOLH_HCSL25  0026  0.063058
+                        IOS_LVDS33  0027  0.069334
+                            VOLH33  0028  0.075092
+                            VOLH18  0029  0.082970
+                     OutputLeakage  0030  0.041666
+                      InputLeakage  0031  0.034202
+                            Opcode  0032  0.007294
+                     PostJob Reset  9998  0.004873
+
+                        Entire Job  9999  6.542174
+
+
