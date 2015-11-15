@@ -1,8 +1,8 @@
 from Lib.reg2pat import *
 from Lib.vc5_summary import *
-# sample_prg_path = input("   Pleas enter the program path: "
-#                         "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
-sample_prg_path = '.'
+sample_prg_path = input("   Pleas enter the program path: "
+                        "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
+# sample_prg_path = '.'
 os.chdir(sample_prg_path)
 
 # Read VersaClock 5 Timing Commander Summary
