@@ -1,34 +1,44 @@
 from Lib.reg2pat import *
+from Lib.vc5_summary import *
+sample_prg_path = input("   Pleas enter the program path: "
+                        "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
+# sample_prg_path = '.'
+os.chdir(sample_prg_path)
 
-search_for = ['CLK0', 'CLK1', 'CLK2', 'CLK3']
-output_freq = []
-conf = []
-conf_enable = [0, 0, 0, 0]
+# Read VersaClock 5 Timing Commander Summary
+vc5 = VC5Get(os.path.join(sample_prg_path, 'code'))
 
-vc5_file = find_vc5_summary('.\\code\\')
+# Write Writing Register Patterns for all OTP configs
+os.chdir('..\\')
+for x in range(0, 4):
+    if vc5.conf_enable[x] == 1:
+        otp_wconfig = WritePat('.\\patterns%s\\patsmb\\OTP_wconfig%d.atp' % (vc5.i2c_address, x), vc5.i2c_address)
+        otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+        otp_wconfig.wbyte_lst(vc5.conf[x], 0, int('0x69', 0) + 1)
+        otp_wconfig.close_pat()
+# Write Reading Register Patterns
+        otp_rconfig = WritePat('.\\patterns%s\\patsmb\\OTP_rconfig%d.atp' % (vc5.i2c_address, x), vc5.i2c_address)
+        otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+        otp_rconfig.rbyte_lst(vc5.conf[x], 0, int('0x69', 0) + 1)
+        otp_rconfig.close_pat()
 
-for line in vc5_file:
-    if any(x in line for x in search_for):      # Read Frequency Across Configs
-        line = re.split('\s+', line)
-        output_freq.append(line[1])
-    elif ("Configuration" in line) and (len(line) > 20):
-        line = re.split('\s+', line)            # Read Config Hex Strings and Correct I2C Address for Timing Commander
-        if line[2] == 'E0':
-            line[2] = '60'
-        elif line[2] == 'E1':
-            line[2] = '61'
-        line = line[2:]
-        conf_string = ' '.join(line)
-        conf.append(conf_string)
+try:
+    for prg_file in glob.glob("*FT*.xls"):
+        workbook = prg_file
+        print("Compiling against " + workbook + '.....')
+        compile_command = "apc .\\patterns%s\\patsmb\\OTP_*.atp " % vc5.i2c_address + \
+                          "-digital_inst hsd100200 " \
+                          "-suppress_log " \
+                          "-extended " \
+                          "-comments " \
+                          "-pinmap_workbook " + workbook
+        os.system(compile_command)
+except (NameError, FileNotFoundError):
+    sys.exit("No Program WorkBook at directory")
 
-
-# Determine if Configs are active
-for i in range(0, 4):
-    for x in range(int(len(output_freq) / 4)*i, (1+i)*int(len(output_freq) / 4)):
-        if output_freq[x] != '-----':
-            conf_enable[i] = 1
-            break
-
-
-print(conf_enable)
-print(conf)
+os.chdir('.\\patterns%s\\patsmb\\' % vc5.i2c_address)
+del_flag = input("Delete Logs and ATP files? Y/N\n")
+if del_flag == 'Y' or 'y':
+    os.system("del *.atp")
+    os.system("del *.log")
+input("press enter to exit")
