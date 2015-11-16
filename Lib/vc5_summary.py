@@ -36,9 +36,10 @@ class VC5Get(object):
                 line = re.split('\s+', line)            # Read Config Hex Strings and Correct I2C Address for TC
                 if line[2] == 'E0':
                     line[2] = '60'
-                    self.i2c_address = 'D0'
                 elif line[2] == 'E1':
                     line[2] = '61'
+                if line[2] == '60':
+                    self.i2c_address = 'D0'
                 line = line[2:]
                 if self.vco_mon is False:
                     line[0x11] = '3F'
