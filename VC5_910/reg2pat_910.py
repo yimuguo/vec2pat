@@ -65,10 +65,9 @@ def bytex2y(x, y):
     pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
     pat.close()
 # bytex2y(0,208)
-bytex2y(0, 51)
-bytex2y(51, 101)
-bytex2y(101, 150)
-bytex2y(150, 208)
+bytex2y(0, 70)
+bytex2y(70, 140)
+bytex2y(140, 208)
 
 os.chdir('.')
 try:
