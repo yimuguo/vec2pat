@@ -1,13 +1,14 @@
 import re
 import os
 import sys
+import glob
 
 
-def find_vc3_code(search_path):
+def find_vc3_code(search_path='.'):
     try:
         for file in os.listdir(search_path):
             if file.endswith(".txt"):
-                config_file = open(os.path.join(".\\code\\", file), mode='rb')
+                config_file = open(file, mode='rb')
                 vec_data = config_file.read()
                 vec_string = vec_data.decode('utf-16')
                 vec_data = vec_string.split('\r\n')
@@ -15,15 +16,19 @@ def find_vc3_code(search_path):
                     if line[:12] == "<Binary Hex=" and len(line) > 400:
                         hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
                         return hexlist
-    except RuntimeError:
-        sys.exit('No Configuration File in Code Folder')
+    except (FileNotFoundError, FileExistsError):
+        sys.exit('No Configuration File in Code Folder ' + os.getcwd())
 
 
 class WritePat(object):
+    vco_band_byte = 17
+    vco_mon = False
 
-    def __init__(self, pat_path, i2c_address='D4'):
+    def __init__(self, pat_file, i2c_address='D4'):
         # os.chdir('.\\')
-        self.pat = open(pat_path, 'w+')
+        self.pat_path = os.getcwd()
+        self.pat_file = pat_file
+        self.pat = open(pat_file, 'w+')
         self.i2c_address = i2c_address
         self.hexinput = i2c_address
 
@@ -114,6 +119,12 @@ class WritePat(object):
         self.write_pat('bstar', 1, 1)
         self.write_byte(int(self.i2c_address, 16) + 1, 'Restart')
         for i in range(int(startbyte), int(stopbyte) - 1):
+            if (self.vco_mon is False) and (i == self.vco_band_byte):
+                self.write_pat('', '', '', 'read_byte0x11', 'VCO_band_byte')
+                for x in range(0, 8):
+                    self.write_pat('readt', 1, 'X')
+                self.write_pat('mack', 1, 0)
+                continue
             self.read_byte(hexlist[i], 'read_byte%s' % hex(i))
         self.read_byte(hexlist[stopbyte-1], 'read_byte%s' % hex(stopbyte-1), last_byte=True)
 
@@ -121,3 +132,19 @@ class WritePat(object):
         self.pat.write('\t\t\t> bstop\t\t1\t0;\n')
         self.pat.write('repeat 5\t> noop\t\t1\t1;\nhalt\t\t>\t-\t\t-\t-;\n\t\t\t>\t-\t\t-\t-;\n}')
         self.pat.close()
+
+    def compile_pat(self, workbook_path='..\\'):
+        try:
+            for workbook in glob.glob(os.path.join(workbook_path, "*FT*.xls")):
+                print("Compiling " + os.path.join(self.pat_path, self.pat_file) + "\n"
+                      "     against workbook" + workbook + '.....')
+                compile_command = "apc %s\\*.atp " % self.pat_path + \
+                                  "-digital_inst hsd100200 " \
+                                  "-suppress_log " \
+                                  "-extended " \
+                                  "-comments " \
+                                  "-pinmap_workbook " + workbook
+                os.system(compile_command)
+                break
+        except (NameError, FileNotFoundError):
+            sys.exit("No Program WorkBook at directory")
