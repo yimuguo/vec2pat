@@ -1,8 +1,8 @@
 from Lib.reg2pat import *
 from Lib.vc5_summary import *
-# sample_prg_path = input("   Pleas enter the program path: "
-#                         "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
-sample_prg_path = '.'
+sample_prg_path = input("   Pleas enter the program path: "
+                        "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
+# sample_prg_path = '.'
 os.chdir(sample_prg_path)
 
 # Read VersaClock 5 Timing Commander Summary
@@ -50,5 +50,12 @@ if vc3_flag == 'Y':
             vc3_910.wbyte_lst(vc3_code, i * (int(208 / vc3_divpat)), (i + 1) * (int(208 / vc3_divpat)))
         vc3_910.close_pat()
         vc3_910.compile_pat()
+
+# del_flag = input("Delete Logs and ATP files? Y/N\n")
+del_flag = 'Y'
+if del_flag == 'Y' or 'y':
+    os.system("del *.atp")
+    os.system("del *.log")
+
 
 input("Press ENTER to Exit")

@@ -4,7 +4,7 @@ import sys
 import glob
 
 
-def find_vc3_code(search_path='.'):
+def find_vc3_code(search_path='..\\code910\\'):
     try:
         for file in os.listdir(search_path):
             if file.endswith(".txt"):
@@ -25,7 +25,6 @@ class WritePat(object):
     vco_mon = False
 
     def __init__(self, pat_file, i2c_address='D4'):
-        # os.chdir('.\\')
         self.pat_path = os.getcwd()
         self.pat_file = pat_file
         self.pat = open(pat_file, 'w+')
@@ -46,12 +45,11 @@ class WritePat(object):
     def write_header(self, start_label, i2c_clk_tset='SCL', i2c_data_tset='SDA'):
         self.pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
         self.pat.write('\n')
-        self.pat.write('vector       ( $tset, %s, %s)\n{\n' % (i2c_clk_tset, i2c_data_tset))    # write i2c timingset
+        self.pat.write('vector       ( $tset, %s, %s)\n{\n' % (i2c_clk_tset, i2c_data_tset))    # write i2c
         self.write_pat('', '', '', 'start_label Write_%s:' % start_label)
         self.write_pat('noop', 1, 1)
         self.write_pat('noop', 1, 1, 'repeat 10 ')
         self.write_pat('bstar', 1, 1)
-        # self.pat.write('\t\t\t> noop\t\t1\t1;\nrepeat 10 \t> noop\t\t1\t1;\n\t\t\t> bstar\t\t1\t1;\n')
         self.write_byte(self.i2c_address, 'Slave_address')
 
     def hex2bin_lst(self):
