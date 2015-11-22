@@ -20,6 +20,21 @@ def find_vc3_code(search_path='..\\code910\\'):
         sys.exit('No Configuration File in Code Folder ' + os.getcwd())
 
 
+def w1byte_pat(bytenum, byte, name='w1byte', i2c_address='D4'):
+    w1byte = WritePat('%s.atp' % name, i2c_address)
+    w1byte.write_header(name)
+    w1byte.write_byte(bytenum, 'start')
+    w1byte.write_byte(byte)
+    w1byte.close_pat()
+
+
+def wbytes_pat(hexlist, name, i2c_address='D4'):
+    wbytes = WritePat('%s.atp' % name, i2c_address)
+    wbytes.write_header(name)
+    wbytes.wbyte_lst(hexlist)
+    wbytes.close_pat()
+
+
 class WritePat(object):
     vco_band_byte = 17
     vco_mon = False

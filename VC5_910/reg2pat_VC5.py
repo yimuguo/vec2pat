@@ -1,8 +1,13 @@
 from Lib.reg2pat import *
 from Lib.vc5_summary import *
-sample_prg_path = input("   Pleas enter the program path: "
-                        "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
-# sample_prg_path = '.'
+DEBUG_MODE = 1
+
+
+if DEBUG_MODE == 1:
+    sample_prg_path = '.'
+else:
+    sample_prg_path = input("   Pleas enter the program path: "
+                            "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
 os.chdir(sample_prg_path)
 
 # Read VersaClock 5 Timing Commander Summary
@@ -34,7 +39,8 @@ if del_flag == 'Y' or 'y':
 # =========================================================================
 # VC3_910 External CLk Pattern
 # =========================================================================
-vc3_flag = input("Does the VC3 needs to be compiled? Y/N    ")
+# vc3_flag = input("Does the VC3 needs to be compiled? Y/N    ")
+vc3_flag = 'Y'
 if vc3_flag == 'Y':
     os.chdir('..\\..\\code910\\')
     vc3_code = find_vc3_code()
