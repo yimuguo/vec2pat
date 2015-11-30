@@ -17,7 +17,22 @@ def find_vc3_code(search_path='..\\code910\\'):
                         hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
                         return hexlist
     except (FileNotFoundError, FileExistsError):
-        sys.exit('No Configuration File in Code Folder ' + os.getcwd())
+        found_code = True
+        while found_code:
+            print('!!!!!!!!!!!!! No Configuration File in Code Folder !!!!!!!!!!!!!' + os.getcwd() + '\n')
+            file = input("   Please Manually Input VC3 Configuration File with Valid Path in txt Format:  ")
+            try:
+                config_file = open(file, mode='rb')
+                vec_data = config_file.read()
+                vec_string = vec_data.decode('utf-16')
+                vec_data = vec_string.split('\r\n')
+                for line in vec_data:               # Read Code into List
+                    if line[:12] == "<Binary Hex=" and len(line) > 400:
+                        found_code = False
+                        hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
+                        return hexlist
+            except (FileExistsError, FileNotFoundError):
+                pass
 
 
 def w1byte_pat(bytenum, byte, name='w1byte', i2c_address='D4'):
@@ -151,7 +166,7 @@ class WritePat(object):
             for workbook in glob.glob(os.path.join(workbook_path, "*FT*.xls")):
                 print("Compiling " + os.path.join(self.pat_path, self.pat_file) + "\n"
                       "     against workbook" + workbook + '.....')
-                compile_command = "apc %s\\*.atp " % self.pat_path + \
+                compile_command = "apc %s " % self.pat_file + \
                                   "-digital_inst hsd100200 " \
                                   "-suppress_log " \
                                   "-extended " \

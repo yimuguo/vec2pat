@@ -2,12 +2,19 @@ from Lib.reg2pat import *
 from Lib.vc5_summary import *
 DEBUG_MODE = 1
 
+VC3_FLAG = 'N'
+VC5_LOG_DEL_FLAG = 'Y'
+VC3_LOG_DEL_FLAG = 'Y'
 
-if DEBUG_MODE == 1:
-    sample_prg_path = '.'
-else:
+sample_prg_path = '.'
+
+if DEBUG_MODE != 1:
     sample_prg_path = input("   Pleas enter the program path: "
                             "   e.g. \\\corpgroup\\\FTGInfo\\\Test_Eng\\\J750_SW_HW\\\AK652_008_std ")
+    VC5_LOG_DEL_FLAG = input("Delete VC5 Pattern Logs and ATP files? Y/N    ")
+    VC3_FLAG = input("Does the VC3 needs to be compiled? Y/N    ")
+    VC3_LOG_DEL_FLAG = input("Delete VC3 Pattern Logs and ATP files? Y/N    ")
+
 os.chdir(sample_prg_path)
 
 # Read VersaClock 5 Timing Commander Summary
@@ -27,21 +34,19 @@ for x in range(0, 4):
         otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
         otp_rconfig.rbyte_lst(vc5.conf[x], 0, int('0x69', 0) + 1)
         otp_rconfig.close_pat()
-        otp_wconfig.compile_pat('..\\..\\')
+        otp_rconfig.compile_pat('..\\..\\')
 
-# del_flag = input("Delete Logs and ATP files? Y/N\n")
-del_flag = 'Y'
-if del_flag == 'Y' or 'y':
-    os.system("del *.atp")
-    os.system("del *.log")
+    if VC5_LOG_DEL_FLAG == ('Y' or 'y'):
+        os.system("del OTP_wconfig%d.atp" % x)
+        os.system("del OTP_wconfig%d.log" % x)
+        os.system("del OTP_rconfig%d.atp" % x)
+        os.system("del OTP_rconfig%d.log" % x)
 
 
 # =========================================================================
 # VC3_910 External CLk Pattern
 # =========================================================================
-# vc3_flag = input("Does the VC3 needs to be compiled? Y/N    ")
-vc3_flag = 'Y'
-if vc3_flag == 'Y':
+if VC3_FLAG == ('Y' or 'y'):
     os.chdir('..\\..\\code910\\')
     vc3_code = find_vc3_code()
     vc3_divpat = 3
@@ -57,11 +62,9 @@ if vc3_flag == 'Y':
         vc3_910.close_pat()
         vc3_910.compile_pat()
 
-# del_flag = input("Delete Logs and ATP files? Y/N\n")
-del_flag = 'Y'
-if del_flag == 'Y' or 'y':
-    os.system("del *.atp")
-    os.system("del *.log")
+        if VC3_LOG_DEL_FLAG == ('Y' or 'y'):
+            os.system("del vc3_part%d.atp" % (i+1))
+            os.system("del vc3_part%d.LOG" % (i+1))
 
-
-input("Press ENTER to Exit")
+if DEBUG_MODE != 1:
+    input("Press ENTER to Exit")
