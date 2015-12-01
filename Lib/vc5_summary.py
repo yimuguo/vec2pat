@@ -22,7 +22,7 @@ class VC5Get(object):
                 if process == 1:
                     self.process_file()
                 break
-        except (RuntimeError, TypeError, NameError):
+        except():
             sys.exit('No Summary Txt File Present')
 
     def process_file(self):
@@ -54,4 +54,3 @@ class VC5Get(object):
                 if self.output_freq[x] != '-----':
                     self.conf_enable[i] = 1
                     break
-
