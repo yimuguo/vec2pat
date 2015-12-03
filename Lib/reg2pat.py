@@ -39,7 +39,7 @@ def w1byte_pat(bytenum, byte, name='w1byte', i2c_address='D4'):
     w1byte = WritePat('%s.atp' % name, i2c_address)
     w1byte.write_header(name)
     w1byte.write_byte(bytenum, 'start')
-    w1byte.write_byte(byte)
+    w1byte.write_byte(byte, 'write_byte_%s' % bytenum)
     w1byte.close_pat()
 
 
