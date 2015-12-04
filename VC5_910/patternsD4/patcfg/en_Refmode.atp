@@ -1,0 +1,45 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+vector     ( $tset, SCLsel0, SDAsel1)
+{
+start_label en_Refmode:
+           > noop   1        1       ; 
+repeat 10  
+           > noop   1        1       ; 
+           > bstar  1        1       ; 
+           > wridt  1        1       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > sack   1        L       ; 
+/* off = 16 */
+           > wridt  1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > sack   1        L       ; 
+wbyte_16:
+           > wridt  1        0       ; // na
+           > -      1        0       ; // na 
+           > -      1        0       ; // na 
+           > -      1        0       ; // na 
+           > -      1        0       ; // na 
+           > -      1        1       ; // en_refmode
+           > -      1        0       ; // SP 
+           > -      1        0       ; // en_global_shutdown 
+           > sack   1        L       ; 
+           > bstop  1        0       ; 
+           > noop   1        1       ; 
+halt       
+           > -      -        -       ; 
+           > -      -        -       ; 
+}
+

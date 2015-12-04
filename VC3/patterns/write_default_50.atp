@@ -1,0 +1,555 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+vector     ( $tset, SCL, SDA,  all_SE)
+{
+start_label writedefault50:
+           > noop   1    1     XXXXX  ;
+repeat 10  
+           > noop   1    1     XXXXX  ; 
+           > bstar  1    1     XXXXX  ; 
+           > wridt  1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ;
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+/* prowrite cmd = 00*/
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+/* off = 00*/
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_0_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_1_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_2_13:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_3_13:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_4_9:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_5_4:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_6_32:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_7_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_8_120:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_9_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_10_0:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_11_0:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_12_0:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_13_17:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_14_162:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_15_162:
+           > wridt  1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_16_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_17_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_18_2:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_19_2:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_20_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_21_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_22_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_23_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_24_1:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_25_1:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_26_36:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_27_36:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_28_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_29_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_30_48:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_31_48:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_32_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_33_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    1     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_34_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_35_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_36_16:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_37_16:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_38_16:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_39_16:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_40_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_41_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_42_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_43_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_44_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_45_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_46_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_47_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_48_0:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_49_1:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+wbyte_50_1:
+           > wridt  1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > -      1    0     XXXXX  ; 
+           > sack   1    L     XXXXX  ; 
+           > bstop  1    0     XXXXX  ; 
+           > noop   1    1     XXXXX  ; 
+halt       
+           > -      -    -     XXXXX  ; 
+           > -      -    -     XXXXX  ; 
+}
+

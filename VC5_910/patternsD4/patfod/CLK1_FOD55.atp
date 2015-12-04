@@ -1,0 +1,218 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+vector     ( $tset, SCLsel0, SDAsel1)
+{
+start_label CLK1_FOD55:
+           > noop   1        1       ; 
+repeat 10  
+           > noop   1        1       ; 
+           > bstar  1        1       ; 
+           > wridt  1        1       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > sack   1        L       ; 
+/* off = 33 */
+           > wridt  1        0       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > sack   1        L       ; 
+wbyte_33:
+           > wridt  1        0       ; // i2c_resetb1
+           > -      1        0       ; // na 
+           > -      1        0       ; // na
+           > -      1        0       ; // na
+           > -      1        0       ; // selb_norm1
+           > -      1        0       ; // sel_ext1
+           > -      1        0       ; // int_mode1 
+           > -      1        1       ; // en_fod1
+           > sack   1        L       ; 
+wbyte_34:
+           > wridt  1        0       ; // 
+           > -      1        0       ; // 
+           > -      1        0       ; // 
+           > -      1        0       ; // 
+           > -      1        0       ; // 
+           > -      1        1       ; //OD1_offset<24>  
+           > -      1        0       ; //OD1_offset<23>  
+           > -      1        1       ; //OD1_offset<22>  
+           > sack   1        L       ; 
+wbyte_35:
+           > wridt  1        0       ; //OD1_offset<21>   
+           > -      1        1       ; //OD1_offset<20>
+           > -      1        0       ; //OD1_offset<19>
+           > -      1        1       ; //OD1_offset<18>
+           > -      1        0       ; //OD1_offset<17>
+           > -      1        1       ; //OD1_offset<16>
+           > -      1        0       ; //OD1_offset<15>
+           > -      1        1       ; //OD1_offset<14> 
+           > sack   1        L       ; 
+wbyte_36:
+           > wridt  1        0       ; //OD1_offset<13>  
+           > -      1        1       ; //OD1_offset<12>  
+           > -      1        0       ; //OD1_offset<11>  
+           > -      1        1       ; //OD1_offset<10>  
+           > -      1        0       ; //OD1_offset<9>  
+           > -      1        1       ; //OD1_offset<8>  
+           > -      1        0       ; //OD1_offset<7>  
+           > -      1        1       ; //OD1_offset<6>  
+           > sack   1        L       ; 
+wbyte_37:
+           > wridt  1        0       ; //OD1_offset<5>  
+           > -      1        1       ; //OD1_offset<4>  
+           > -      1        0       ; //OD1_offset<3>  
+           > -      1        1       ; //OD1_offset<2>  
+           > -      1        0       ; //OD1_offset<1>   
+           > -      1        1       ; //OD1_offset<0>   
+           > -      1        0       ; // OD1_SSen  
+           > -      1        0       ; //na  
+           > sack   1        L       ; 
+wbyte_38:
+           > wridt  1        0       ; //OD1_step<23>  
+           > -      1        0       ; //OD1_step<22>  
+           > -      1        0       ; //OD1_step<21>  
+           > -      1        0       ; //OD1_step<20>  
+           > -      1        0       ; //OD1_step<19>  
+           > -      1        0       ; //OD1_step<18>  
+           > -      1        0       ; //OD1_step<17>  
+           > -      1        0       ; //OD1_step<16>  
+           > sack   1        L       ; 
+wbyte_39:
+           > wridt  1        0       ; //OD1_step<15>  
+           > -      1        0       ; //OD1_step<14>  
+           > -      1        0       ; //OD1_step<13>  
+           > -      1        0       ; //OD1_step<12>  
+           > -      1        0       ; //OD1_step<11>  
+           > -      1        0       ; //OD1_step<10>  
+           > -      1        0       ; //OD1_step<9>  
+           > -      1        0       ; //OD1_step<8>  
+           > sack   1        L       ; 
+wbyte_40:
+           > wridt  1        0       ; //OD1_step<7>  
+           > -      1        0       ; //OD1_step<6>  
+           > -      1        0       ; //OD1_step<5>  
+           > -      1        0       ; //OD1_step<4>  
+           > -      1        0       ; //OD1_step<3>  
+           > -      1        0       ; //OD1_step<2>  
+           > -      1        0       ; //OD1_step<1>  
+           > -      1        0       ; //OD1_step<0>  
+           > sack   1        L       ; 
+wbyte_41:
+           > wridt  1        0       ; //OD1_period<12> 
+           > -      1        0       ; //OD1_period<11> 
+           > -      1        0       ; //OD1_period<10> 
+           > -      1        0       ; //OD1_period<9> 
+           > -      1        0       ; //OD1_period<8> 
+           > -      1        0       ; //OD1_period<7> 
+           > -      1        0       ; //OD1_period<6> 
+           > -      1        0       ; //OD1_period<5> 
+           > sack   1        L       ; 
+wbyte_42:
+           > wridt  1        0       ; //OD1_period<4> 
+           > -      1        0       ; //OD1_period<3> 
+           > -      1        0       ; //OD1_period<2> 
+           > -      1        0       ; //OD1_period<1> 
+           > -      1        0       ; //OD1_period<0> 
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > sack   1        L       ; 
+wbyte_43:
+           > wridt  1        0       ; //OD1_intskew<11>
+           > -      1        0       ; //OD1_intskew<10>
+           > -      1        0       ; //OD1_intskew<9>
+           > -      1        0       ; //OD1_intskew<8>
+           > -      1        0       ; //OD1_intskew<7>
+           > -      1        0       ; //OD1_intskew<6>
+           > -      1        0       ; //OD1_intskew<5>
+           > -      1        0       ; //OD1_intskew<4>
+           > sack   1        L       ; 
+wbyte_44:
+           > wridt  1        0       ; //OD1_intskew<3>
+           > -      1        0       ; //OD1_intskew<2>
+           > -      1        0       ; //OD1_intskew<1>
+           > -      1        0       ; //OD1_intskew<0>
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //en_aux1
+           > sack   1        L       ; 
+wbyte_45:
+           > wridt  1        0       ; //OD1_int<11>
+           > -      1        0       ; //OD1_int<10>
+           > -      1        0       ; //OD1_int<9>
+           > -      1        1       ; //OD1_int<8>
+           > -      1        0       ; //OD1_int<7>
+           > -      1        1       ; //OD1_int<6>
+           > -      1        0       ; //OD1_int<5>
+           > -      1        1       ; //OD1_int<4>
+           > sack   1        L       ; 
+wbyte_46:
+           > wridt  1        0       ; //OD1_int<3>
+           > -      1        1       ; //OD1_int<2>
+           > -      1        0       ; //OD1_int<1>
+           > -      1        1       ; //OD1_int<0>
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //na
+           > sack   1        L       ; 
+wbyte_47:
+           > wridt  1        0       ; //na
+           > -      1        0       ; //na
+           > -      1        0       ; //OD1_frcskew<5>
+           > -      1        0       ; //OD1_frcskew<4>
+           > -      1        0       ; //OD1_frcskew<3>
+           > -      1        0       ; //OD1_frcskew<2>
+           > -      1        0       ; //OD1_frcskew<1>
+           > -      1        0       ; //OD1_frcskew<0>
+           > sack   1        L       ; 
+           > bstop  1        0       ; 
+           > noop   1        1       ; 
+           > noop   1        1       ; 
+           > bstar  1        1       ; 
+           > wridt  1        1       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > sack   1        L       ; 
+/* off = 33 */
+           > wridt  1        0       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        0       ; 
+           > -      1        1       ; 
+           > sack   1        L       ; 
+wbyte_33a:
+           > wridt  1        1       ; // i2c_resetb1
+           > -      1        0       ; // na 
+           > -      1        0       ; // na
+           > -      1        0       ; // na
+           > -      1        0       ; // selb_norm1
+           > -      1        0       ; // sel_ext1
+           > -      1        0       ; // int_mode1 
+           > -      1        1       ; // en_fod1
+           > sack   1        L       ; 
+           > bstop  1        0       ; 
+           > noop   1        1       ; 
+halt       
+           > -      -        -       ; 
+           > -      -        -       ; 
+}
+

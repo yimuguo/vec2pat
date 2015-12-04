@@ -1,0 +1,623 @@
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;
+
+vector       ( $tset, SCL, SDA)
+{
+start_label Write_B150_to_B208:
+			> noop		1	1;
+repeat 10	> noop		1	1;
+			> bstar		1	1;
+Slave_address:					//D4
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Prowrite_CMD:					//00
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+Start_w_byte:					//150
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_150:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_151:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_152:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_153:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_154:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_155:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_156:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_157:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_158:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_159:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_160:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_161:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_162:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_163:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_164:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_165:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_166:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_167:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_168:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_169:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_170:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_171:					//7F
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_172:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_173:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_174:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_175:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_176:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_177:					//82
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_178:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_179:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_180:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_181:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_182:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_183:					//29
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_184:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_185:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_186:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_187:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_188:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_189:					//56
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_190:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_191:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_192:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_193:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_194:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_195:					//26
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_196:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_197:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_198:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_199:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_200:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_201:					//3F
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	1;
+			> sack		1	L;
+write_byte_202:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_203:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_204:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_205:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_206:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+write_byte_207:					//60
+			> wridt		1	0;
+			> wridt		1	1;
+			> wridt		1	1;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> wridt		1	0;
+			> sack		1	L;
+			> bstop		1	0;
+repeat 5	> noop		1	1;
+halt		>	-		-	-;
+			>	-		-	-;
+}

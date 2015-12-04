@@ -1,0 +1,69 @@
+
+import tset bstar, bstop, mack, nack, noop, readt, sack, wridt,pcount;
+pin_setup = {
+        allouts freq_count ;
+}
+
+vector     ( $tset,SCLsel0,SDAsel1, OUT0_i2c, OUT1, OUT1B, OUT2, OUT2B, OUT3, OUT3B, OUT4, OUT4B)
+{
+start_label disCP_checkout:
+            > noop   1     1       x  x  x  x  x  x  x  x  x   ; 
+repeat 10   > noop   1     1       x  x  x  x  x  x  x  x  x   ; 
+            > bstar  1     1       x  x  x  x  x  x  x  x  x   ; 
+            > wridt  1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > sack   1     L       x  x  x  x  x  x  x  x  x   ; 
+/* off = 28  */                                               
+            > wridt  1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; 
+            > sack   1     L       x  x  x  x  x  x  x  x  x   ; 
+wbyte_28:                                                     
+            > wridt  1     1       x  x  x  x  x  x  x  x  x   ; //Cal_start
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //cnf_vreg<1>
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //cnf_vreg<0>
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //cnf_vreg_vco<1>
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //cnf_vreg_vco<0>
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; //cnf_vco_bias<1>
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //cnf_vco_bias<0>
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; //en_cp
+            > sack   1     L       x  x  x  x  x  x  x  x  x   ; 
+wbyte_29:                                                     
+            > wridt  1     1       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     0       x  x  x  x  x  x  x  x  x   ; // 
+            > -      1     1       x  x  x  x  x  x  x  x  x   ; // 
+            > sack   1     L       x  x  x  x  x  x  x  x  x   ; 
+            > bstop  1     0       x  x  x  x  x  x  x  x  x   ; 
+            > noop   1     1       x  x  x  x  x  x  x  x  x   ; 
+repeat 5000 > noop   1     1       x  x  x  x  x  x  x  x  x   ; 
+            > noop   1     1       x  x  x  x  x  x  x  x  x   ;              
+            > pcount 1     1       X  X  X  X  X  X  X  X  X   ; 
+repeat 10   > -      1     1       X  X  X  X  X  X  X  X  X   ; 
+            > -      1     1       0  0  0  0  0  0  0  0  0   ; 
+repeat 450  > -      1     1       0  0  0  0  0  0  0  0  0   ; 
+            > -      1     1       0  0  0  0  0  0  0  0  0   ; 
+repeat 2050 > -      1     1       0  X  X  X  X  X  X  X  X   ; 
+            > -      1     1       X  X  X  X  X  X  X  X  X   ; 
+repeat 10   > -      1     1       X  X  X  X  X  X  X  X  X   ; 
+halt                                                          
+            > -      1     1       X  X  X  X  X  X  X  X  X   ;        
+            > -      1     1       X  X  X  X  X  X  X  X  X   ;         
+                      
+}
+

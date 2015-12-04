@@ -5,15 +5,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>8094103d-f197-47f9-ab7b-ca96af2053b8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>vec2pat.py</StartupFile>
+    <StartupFile>VC3\reg2pat_VC3.py</StartupFile>
     <SearchPath>
     </SearchPath>
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>.\vc3\</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>vec2pat</Name>
     <RootNamespace>vec2pat</RootNamespace>
     <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
-    <InterpreterVersion>2.7</InterpreterVersion>
+    <InterpreterVersion>3.4</InterpreterVersion>
+    <IsWindowsApplication>True</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,10 +25,59 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="vec2pat.py" />
+    <Compile Include="VC3\reg2pat_VC3.py" />
+    <Compile Include="VC5_910\reg2pat_910.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VC3\" />
+    <Folder Include="VC3\code\" />
+    <Folder Include="VC3\patterns\" />
+    <Folder Include="WriteBytes\" />
+    <Folder Include="VC5_910\" />
+    <Folder Include="VC5_910\pattern\" />
+    <Folder Include="VC5_910\registerhex_910\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VC3\code\5V49EE503-207_Cr#3_F.txt" />
+    <Content Include="VC3\code\5V49EE503-207_Cr#3_F.xml" />
+    <Content Include="VC3\patterns\read0to51.atp" />
+    <Content Include="VC3\patterns\read101to150.atp" />
+    <Content Include="VC3\patterns\read150to208.atp" />
+    <Content Include="VC3\patterns\read51to101.atp" />
+    <Content Include="VC3\patterns\read_default_10.atp" />
+    <Content Include="VC3\patterns\read_default_100.atp" />
+    <Content Include="VC3\patterns\read_default_150.atp" />
+    <Content Include="VC3\patterns\read_default_200.atp" />
+    <Content Include="VC3\patterns\read_default_50.atp" />
+    <Content Include="VC3\patterns\write0to51.atp" />
+    <Content Include="VC3\patterns\write101to150.atp" />
+    <Content Include="VC3\patterns\write150to208.atp" />
+    <Content Include="VC3\patterns\write51to101.atp" />
+    <Content Include="VC3\patterns\write_default_100.atp" />
+    <Content Include="VC3\patterns\write_default_150.atp" />
+    <Content Include="VC3\patterns\write_default_200.atp" />
+    <Content Include="VC3\patterns\write_default_50.atp" />
+    <Content Include="VC3\patterns\write_default_xx.atp" />
+    <Content Include="VC3\patterns\write_testcode_50.atp" />
+    <Content Include="VC5_910\pattern\clk910_100.PAT" />
+    <Content Include="VC5_910\pattern\clk910_100.txt" />
+    <Content Include="VC5_910\pattern\clk910_150.txt" />
+    <Content Include="VC5_910\pattern\clk910_200.txt" />
+    <Content Include="VC5_910\pattern\clk910_50.txt" />
+    <Content Include="VC5_910\pattern\pat.txt" />
+    <Content Include="VC5_910\pattern\pat0to207.txt" />
+    <Content Include="VC5_910\pattern\pat0to208.atp" />
+    <Content Include="VC5_910\pattern\pat51to100.txt" />
+    <Content Include="VC5_910\pattern\pat51to101.atp" />
+    <Content Include="VC5_910\pattern\pat51to101.PAT" />
+    <Content Include="VC5_910\pattern\pat51to101.txt" />
+    <Content Include="VC5_910\pattern\register51to101.atp" />
+    <Content Include="VC5_910\pattern\reverse.atp" />
+    <Content Include="VC5_910\registerhex_910\vec.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

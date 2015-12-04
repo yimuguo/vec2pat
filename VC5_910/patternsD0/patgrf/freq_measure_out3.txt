@@ -1,0 +1,20 @@
+import tset pcount;
+
+pin_setup = {
+        OUT0_i2c             freq_count;
+        OUT1                 freq_count;
+        OUT1B                freq_count;
+}
+vector       ( $tset    ,OUT0_i2c, OUT3, OUT3B)
+{
+start_label freq_measure:
+             > pcount       X    X    X;
+repeat 5000  > -            X    X    X;
+             > -            0    0    0;
+repeat 1300  > -            0    0    0;
+repeat 10    > -            X    X    X;
+halt         > -            X    X    X;
+             > -            X    X    X;
+             > -            X    X    X;
+}
+
