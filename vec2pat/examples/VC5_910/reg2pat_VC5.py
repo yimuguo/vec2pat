@@ -6,7 +6,7 @@ VC3_FLAG = 'Y'
 VC5_LOG_DEL_FLAG = 'N'
 VC3_LOG_DEL_FLAG = 'N'
 
-sample_prg_path = 'S:\\Test_Eng\\J750_HW_SW\\VC5\\AK652_008_760_Cisco\\'
+sample_prg_path = 'S:\\Test_Eng\\J750_HW_SW\\VC5\\AK652_008_667\\'
 
 if DEBUG_MODE != 1:
     sample_prg_path = input("   Pleas enter the program path: "
@@ -67,3 +67,5 @@ if VC3_FLAG == ('Y' or 'y'):
 
 if DEBUG_MODE != 1:
     input("Press ENTER to Exit")
+    sys.exit()
+sys.exit()

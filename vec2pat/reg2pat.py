@@ -50,6 +50,13 @@ def wbytes_pat(hexlist, name, i2c_address='D4'):
     wbytes.close_pat()
 
 
+def rbytes_pat(hexlist, name, i2c_address='D4'):
+    wbytes = WritePat('%s.atp' % name, i2c_address)
+    wbytes.write_header(name)
+    wbytes.rbyte_lst(hexlist)
+    wbytes.close_pat()
+
+
 class WritePat(object):
     vco_band_byte = 17
     vco_mon = False
