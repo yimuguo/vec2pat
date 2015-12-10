@@ -9,4 +9,4 @@ def setup():
 def teardown():
     print("TEAR DOWN")
 
-def test_summary
+def test_monitor_bit():

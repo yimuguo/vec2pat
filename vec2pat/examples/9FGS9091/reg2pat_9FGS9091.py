@@ -16,11 +16,6 @@ Default001 = re.split('\s+', Default001_string)
 wbytes_pat(Default001, 'Default001', I2C_ADD)
 rbytes_pat(Default001, 'Default001_r', I2C_ADD)
 
-Default002_string = '00	4F	8F	01	44	8F	01	44	8F	01	44	8F	01	44	85	85	00	00	' \
-             '0C	80	00 00	00	00	81	00	A0	F9	AF	00	0F	32	19	19	00	00	F5	FD'
-Default002 = re.split('\s+', Default002_string)
-wbytes_pat(Default002, 'Default002', I2C_ADD)
-
 # ============OTP Section==============
 w1byte_pat(40, '28', 'OTP_burn_start', I2C_ADD)
 w1byte_pat(40, '20', 'OTP_burn_stop', I2C_ADD)
