@@ -68,4 +68,3 @@ if VC3_FLAG == ('Y' or 'y'):
 if DEBUG_MODE != 1:
     input("Press ENTER to Exit")
     sys.exit()
-sys.exit()
