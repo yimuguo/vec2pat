@@ -12,4 +12,8 @@ class TestVC5Get(TestCase):
         self.assertEqual(self.vc5.i2c_address, 'D4')
 
     def test_vco_mon(self):
-        self.assertEqual(self.vc5.conf[0][0x11], '3F')
+        for x in range(0, 3):
+            self.assertEqual(self.vc5.conf[x][0x11], '3F')
+            self.assertEqual(int(self.vc5.conf[x][0x1d], 16) & 0b00000010, 0)
+            self.assertEqual(int(self.vc5.conf[x][0x1c], 16) & 0b10000000, 0)
+            self.assertEqual(int(self.vc5.conf[x][0x16], 16) & 0b00001000, 0)
