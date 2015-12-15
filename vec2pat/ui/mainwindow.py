@@ -20,30 +20,27 @@ class Window(QtGui.QMainWindow):
     #
     #     pushButton.clicked.connect(selectFile)
 
-    def browse(self):
+    def on_push_browse_btn(self):
         # filedialog = QtGui.QFileDialog(self)
         # filedialog.show()
-        filename = QtGui.QFileDialog.getOpenFileName()
+        filename = QtGui.QFileDialog.getOpenFileName(
+            self, "Open VersaClock Timing Commander Summary File", "C:\\", "Text files (*.txt);; All Files (*)")
         print(filename)
         return filename
 
     def vc5_load_config(self):
         btn = QtGui.QPushButton("Browse", self)
-        # pushButton.clicked.connect(selectFile)
-
-        myfile = QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.browse())
-        print(myfile)
+        QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.on_push_browse_btn())
         # btn.clicked.connect(lambda: self.browse())
         # btn.clicked.connect(QtCore.QCoreApplication.instance().quit)
         btn.resize(btn.sizeHint())
         btn.move(100, 100)
         self.show()
 
-    def stop_app(self):
-        print("Stop")
-        self.setWindowTitle("@@@@@")
 
+def VC5initWindow():
+    app = QtGui.QApplication(sys.argv)
+    Window()
+    sys.exit(app.exec_())
 
-app = QtGui.QApplication(sys.argv)
-GUI = Window()
-sys.exit(app.exec_())
+VC5initWindow()
