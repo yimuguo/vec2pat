@@ -5,8 +5,9 @@ VC3_LOG_DEL_FLAG = 'N'
 I2C_ADD = 'D0'
 os.chdir('S:\\Test_Eng\\J750_HW_SW\\9FGSxxxx\\9FGV1004\\patterns\\')
 
-
-OutputsHiz_hex = ['80', '5F', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44']
+OutputsHiz = '80 5F 9F 61 44 9F 61 44 9F 61 44 9F 61 44 80 80 83 1A' \
+             ' 0C 80 00 02 96 00 00 00 A0 F9 AF 00 0F 24 12 18 00 00 21 F5'
+OutputsHiz_hex = re.split('\s+', OutputsHiz)
 wbytes_pat(OutputsHiz_hex, 'OutputsHiz', I2C_ADD)
 rbytes_pat(OutputsHiz_hex, 'OutputsHiz_r', I2C_ADD)
 
