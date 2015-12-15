@@ -21,15 +21,18 @@ class Window(QtGui.QMainWindow):
     #     pushButton.clicked.connect(selectFile)
 
     def browse(self):
-        filedialog = QtGui.QFileDialog(self)
-        filedialog.show()
+        # filedialog = QtGui.QFileDialog(self)
+        # filedialog.show()
         filename = QtGui.QFileDialog.getOpenFileName()
+        print(filename)
+        return filename
 
     def vc5_load_config(self):
         btn = QtGui.QPushButton("Browse", self)
         # pushButton.clicked.connect(selectFile)
 
-        QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.browse())
+        myfile = QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.browse())
+        print(myfile)
         # btn.clicked.connect(lambda: self.browse())
         # btn.clicked.connect(QtCore.QCoreApplication.instance().quit)
         btn.resize(btn.sizeHint())
