@@ -1,4 +1,3 @@
-import sys
 from PyQt4 import QtGui, QtCore
 from vec2pat import *
 
@@ -13,7 +12,7 @@ class Window(QtGui.QMainWindow):
         self.setWindowTitle("MMT J750 Pattern Generation Tool")
         self.setWindowIcon(QtGui.QIcon('IDTLogo.png'))
         # self.show()
-        self.vc5_load_config()
+        self.vc5_summary_browse_btn()
 
     # def selectFile():
     #     lineEdit.setText(QFileDialog.getOpenFileName())
@@ -24,23 +23,26 @@ class Window(QtGui.QMainWindow):
         # filedialog = QtGui.QFileDialog(self)
         # filedialog.show()
         filename = QtGui.QFileDialog.getOpenFileName(
-            self, "Open VersaClock Timing Commander Summary File", "C:\\", "Text files (*.txt);; All Files (*)")
+            self, "Open VersaClock Timing Commander Summary File",
+            "J:\\VersaClock5\\5P49V5901B(AK652-008_VCOmonitorOFF)\\CodeValidation\\",
+            "Text files (*.txt);; All Files (*)")
         print(filename)
         return filename
 
-    def vc5_load_config(self):
-        btn = QtGui.QPushButton("Browse", self)
+    def vc5_summary_browse_btn(self):
+        btn = QtGui.QPushButton("...", self)
+        fileline = QtGui.QLineEdit()
         QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.on_push_browse_btn())
         # btn.clicked.connect(lambda: self.browse())
         # btn.clicked.connect(QtCore.QCoreApplication.instance().quit)
-        btn.resize(btn.sizeHint())
+        btn.resize(btn.minimumSizeHint())
         btn.move(100, 100)
         self.show()
 
 
-def VC5initWindow():
+def main():
     app = QtGui.QApplication(sys.argv)
     Window()
     sys.exit(app.exec_())
 
-VC5initWindow()
+main()
