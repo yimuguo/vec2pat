@@ -13,7 +13,7 @@ class Window(QtGui.QMainWindow):
         self.setWindowIcon(QtGui.QIcon('IDTLogo.png'))
         # self.show()
         self.vc5_summary_browse_btn()
-
+        self.vc5_directory_line()
     # def selectFile():
     #     lineEdit.setText(QFileDialog.getOpenFileName())
     #
@@ -24,19 +24,24 @@ class Window(QtGui.QMainWindow):
         # filedialog.show()
         filename = QtGui.QFileDialog.getOpenFileName(
             self, "Open VersaClock Timing Commander Summary File",
-            "J:\\VersaClock5\\5P49V5901B(AK652-008_VCOmonitorOFF)\\CodeValidation\\",
+            "C:\\",
             "Text files (*.txt);; All Files (*)")
         print(filename)
         return filename
 
     def vc5_summary_browse_btn(self):
         btn = QtGui.QPushButton("...", self)
-        fileline = QtGui.QLineEdit()
         QtCore.QObject.connect(btn, QtCore.SIGNAL('clicked()'), lambda: self.on_push_browse_btn())
         # btn.clicked.connect(lambda: self.browse())
         # btn.clicked.connect(QtCore.QCoreApplication.instance().quit)
         btn.resize(btn.minimumSizeHint())
         btn.move(100, 100)
+        self.show()
+
+    def vc5_directory_line(self):
+        fileline = QtGui.QLineEdit("C:\\", self)
+        fileline.resize(fileline.minimumSizeHint())
+        fileline.move(10, 10)
         self.show()
 
 
