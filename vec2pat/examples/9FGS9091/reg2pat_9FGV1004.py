@@ -12,10 +12,15 @@ wbytes_pat(OutputsHiz_hex, 'OutputsHiz', I2C_ADD)
 rbytes_pat(OutputsHiz_hex, 'OutputsHiz_r', I2C_ADD)
 
 Default002_string = '00	4F	8F	01	44	8F	01	44	8F	01	44	8F	01	44	85	85	00	00	' \
-             '0C	80	00 00	00	00	81	00	A0	F9	AF	00	0F	32	19	19	00	00	F5	FD'
+             '0C	80	00 00	00	00	80	00	A0	39	AF	00	0F	32	19	19	00	00	F5	FD'
 Default002 = re.split('\s+', Default002_string)
 wbytes_pat(Default002, 'Default002', I2C_ADD)
 
+
+VOLH_LPHCSL_002_string = '00	4F	8F	01	44	8F	01	44	8F	01	44	8F	01	44	85	85	00	00	' \
+             '0C	80	00 00	00	00	81	00	A0	F9	AF	00	0F	32	19	19	00	00	F1	F1 00 10 '
+VOLH_LPHCSL_002 = re.split('\s+', Default002_string)
+wbytes_pat(VOLH_LPHCSL_002, 'VOLH_LPHCSL_002', I2C_ADD)
 # ============OTP Section==============
 w1byte_pat(40, '28', 'OTP_burn_start', I2C_ADD)
 w1byte_pat(40, '20', 'OTP_burn_stop', I2C_ADD)
