@@ -1,6 +1,7 @@
-from PyQt4 import QtGui  # Import the PyQt4 module we'll need
-import sys  # We need sys so that we can pass argv to QApplication
+from PyQt4 import QtGui
+import sys
 from vec2pat.ui import windowui
+from vec2pat import vc5_summary
 import os
 
 
@@ -19,6 +20,8 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
         self.vc5_path_file.setText(self.vc5_filename)
         self.vc3_path_file.setText(self.vc3_filename)
         self.vc5_btn_file.clicked.connect(lambda: self.brws_conf_btn('vc5'))
+        self.vc5_btn_pat.clicked.connect(lambda: self.brws_dir_btn('vc5'))
+        self.vc5_btn_workbook.clicked.connect(lambda: self.brws_conf_btn('vc5'))
         self.vc3_btn_file.clicked.connect(lambda: self.brws_conf_btn('vc3'))
 
     # def on_push_brws_btn(self, path, title_txt):
@@ -32,6 +35,31 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
     #     if dialog.exec_() == QtGui.QDialog.Accepted:
     #         self.vc5_path = dialog.selectedFiles()[0]
 
+    def brws_dir_btn(self, tab_type):
+        if tab_type == 'vc5':
+            self.vc5_path = QtGui.QFileDialog.getExistingDirectory(
+                                self,
+                                "Select Folder",
+                                self.vc5_path
+                                )
+            print(self.vc5_filename)
+            if self.vc5_filename is not '':
+                self.vc5_path_file.setText(self.vc5_filename)
+                path_break = self.vc5_filename.split('/')
+                del path_break[-2]
+                self.vc5_path = '/'.join(path_break)
+                self.vc5_path_pat.setText(self.vc5_path + '')
+            print(self.vc5_path)
+        elif tab_type == 'vc3':
+            self.vc3_filename = QtGui.QFileDialog.getExistingDirectory(
+                                self,
+                                "Select Folder",
+                                self.vc3_path
+                                )
+            print(self.vc3_filename)
+            if self.vc3_filename is not '':
+                self.vc3_path_file.setText(self.vc3_filename)
+
     def brws_conf_btn(self, tab_type):
         if tab_type == 'vc5':
             self.vc5_filename = QtGui.QFileDialog.getOpenFileName(
@@ -43,10 +71,20 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
             print(self.vc5_filename)
             if self.vc5_filename is not '':
                 self.vc5_path_file.setText(self.vc5_filename)
-            path_break = self.vc5_filename.split('/')
-            path_break = path_break[:1]
-
-            print(self.vc5_path_file.text())
+                vc5 = vc5_summary.VC5Get()
+                vc5.summary_file = open(self.vc5_filename, 'r')
+                if self.vco_mon.checkState() == 2:
+                    vc5.vco_mon = False
+                else:
+                    vc5.vco_mon = True
+                print(vc5.vco_mon)
+                vc5.process_file()
+                path_break = self.vc5_filename.split('/')
+                path_break = path_break[0:-2]
+                self.vc5_path = '/'.join(path_break)
+                self.vc5_path_pat.setText(self.vc5_path + '/patterns' + vc5.i2c_address + '/')
+                self.vc5_path_workbook.setText(self.vc5_path)
+            print(self.vc5_path)
         elif tab_type == 'vc3':
             self.vc3_filename = QtGui.QFileDialog.getOpenFileName(
                                 self,
