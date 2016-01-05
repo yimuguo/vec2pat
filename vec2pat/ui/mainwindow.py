@@ -10,11 +10,13 @@ import glob
 class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
     # vc5_path = r"S:\Test_Eng\J750_HW_SW\VC5\AK652_008_802_Samsung\code"
     # vc5_filename = r"S:/Test_Eng/J750_HW_SW/VC5/AK652_008_802_Samsung/code/5P49V5901-802_B#1_Summary.txt"
-    vc3_path = "S:\\Test_Eng\\J750_SW_HW\\VC5\\AK652_008_802_Samsung\\Code910"
-    vc3_filename = r"S:\Test_Eng\J750_HW_SW\VC5\AK652_008_802_Samsung\Code910\OneConfigUpDown.txt"
+    # vc3_path = "S:\\Test_Eng\\J750_SW_HW\\VC5\\AK652_008_802_Samsung\\Code910"
+    # vc3_filename = r"S:\Test_Eng\J750_HW_SW\VC5\AK652_008_802_Samsung\Code910\OneConfigUpDown.txt"
 
     vc5_filename = r"..\tests\code\5P49V5901B-686_A#1_VCO_bits_Off_Summary.txt"
     vc5_path = r"..\tests"
+    vc3_filename = r"..\tests\code910\OneConfigUpDown.txt"
+    vc3_path = r"..\tests\code910"
 
     def __init__(self):
         super(self.__class__, self).__init__()
@@ -29,6 +31,8 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
         # ======================VC3 Tab====================================
         self.vc3_path_file.setText(self.vc3_filename)
         self.vc3_btn_file.clicked.connect(lambda: self.brws_conf_btn('vc3'))
+        self.vc3_btn_pat.clicked.connect(lambda: self.brws_dir_btn('vc3'))
+        self.vc3_btn_workbook.clicked.connect(lambda: self.brws_conf_btn('vc3', 1))
 
     def on_push_brws_btn(self, path, title_txt):
         #   This is the non-native dialog, speed problem with network drives
@@ -100,16 +104,27 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
                                     QtGui.QFileDialog.ReadOnly)
                 if workbook_filename is not '':
                     self.vc5_path_workbook.setText(workbook_filename)
+                    path_break = workbook_filename.split('/')
+                    path_break = path_break[0:-1]
+                    self.vc5_path = "/".join(path_break)
         elif tab_type == 'vc3':
             self.vc3_filename = QtGui.QFileDialog.getOpenFileName(
                                 self,
                                 "Open VersaClock4 Txt Configuration File",
-                                self.vc3_path,
+                                self.vc3_path_file.text(),
                                 "Text files (*.txt);; All Files (*)",
                                 QtGui.QFileDialog.ReadOnly)
+            if self.vc3_filename is not '':
+                self.vc3_path_file.setText(self.vc3_filename)
+                path_break = self.vc3_filename.split('/')
+                path_break = path_break[0:-2]
+                self.vc3_path = "/".join(path_break)
+                self.vc3_path_pat.setText(self.vc3_path)
             print(self.vc3_filename)
             if self.vc3_filename is not '':
                 self.vc3_path_file.setText(self.vc3_filename)
+                for workbook in glob.glob(os.path.join(self.vc5_path, "*FT*.xls")):
+                        self.vc5_path_workbook.setText(workbook)
 
     def gen_pat_btn_vc5(self):
         for x in range(0, 4):
