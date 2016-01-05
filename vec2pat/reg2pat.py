@@ -64,7 +64,6 @@ class WritePat(object):
     def __init__(self, pat_file, i2c_address='D4'):
         self.pat_path = os.getcwd()
         self.pat_file = pat_file
-        self.pat = open(pat_file, 'w+')
         self.i2c_address = i2c_address
         self.hexinput = i2c_address
 
@@ -80,6 +79,7 @@ class WritePat(object):
             self.pat.write('%s:\t\t\t\t\t//%s\n' % (label, comment))
 
     def write_header(self, start_label, i2c_clk_tset='SCL', i2c_data_tset='SDA'):
+        self.pat = open(self.pat_file, 'w+')
         self.pat.write('import tset bstar, bstop, mack, nack, noop, readt, sack, wridt;\n')
         self.pat.write('\n')
         self.pat.write('vector       ( $tset, %s, %s)\n{\n' % (i2c_clk_tset, i2c_data_tset))    # write i2c
