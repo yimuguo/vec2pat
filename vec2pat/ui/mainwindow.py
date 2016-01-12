@@ -117,7 +117,7 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
             if self.vc3_filename is not '':
                 self.vc3_path_file.setText(self.vc3_filename)
                 path_break = self.vc3_filename.split('/')
-                path_break = path_break[0:-2]
+                path_break = path_break[0:-1]
                 self.vc3_path = "/".join(path_break)
                 self.vc3_path_pat.setText(self.vc3_path)
             print(self.vc3_filename)
