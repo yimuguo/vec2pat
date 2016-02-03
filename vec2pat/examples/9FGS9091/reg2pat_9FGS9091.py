@@ -3,18 +3,24 @@ __author__ = 'yguo'
 VC3_FLAG = 'N'
 VC3_LOG_DEL_FLAG = 'N'
 I2C_ADD = 'D0'
-os.chdir('S:\\Test_Eng\\J750_HW_SW\\9FGSxxxx\\9FGS9091\\patterns\\')
+os.chdir('S:\Test_Eng\J750_HW_SW\9FGSxxxx\9FGS9091\AKC692-009\\patterns\\')
 
 
 OutputsHiz_hex = ['80', '5F', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44']
 wbytes_pat(OutputsHiz_hex, 'OutputsHiz', I2C_ADD)
 rbytes_pat(OutputsHiz_hex, 'OutputsHiz_r', I2C_ADD)
 
-Default001_string = '00	4F	 87	 38	 44	 87	 38	 44	 87	 38	 44	 87	 38	 44	 85	 85	 83	 1A	 ' \
-                    '0C	 80	 00	 02	 96	 00	 00	 00	 A0	 FC	 AF	 00	 0F	 24	 12	 18	 00	 00	 21	 F5'
-Default001 = re.split('\s+', Default001_string)
-wbytes_pat(Default001, 'Default001', I2C_ADD)
-rbytes_pat(Default001, 'Default001_r', I2C_ADD)
+LU_code_string = '0	0F	0F	34	64	0F	34	64	0F	34	64	0F	34	64	80	80	83	1A	0C	80	0	' \
+                 '2	96	0	0	0	A0	FC	AF	0	0A	24	12	18	0	0	21	E5'
+LU_code = re.split('\s+', LU_code_string)
+wbytes_pat(LU_code, 'LU_Write', I2C_ADD)
+rbytes_pat(LU_code, 'LU_Read', I2C_ADD)
+
+IBM_String = '00	4F	83	34	54	83	34	54	83	34	54	83	34	54	80	80	83	1A	0C	80	00	02' \
+             '	96	00	00	00	A0	FC	AF	00	0A	24	12	18	00	00	21	E5'
+IBM_code = re.split('\s+', IBM_String)
+wbytes_pat(IBM_code, 'IBM_Write', I2C_ADD)
+rbytes_pat(IBM_code, 'IBM_Read', I2C_ADD)
 
 # ============OTP Section==============
 w1byte_pat(40, '28', 'OTP_burn_start', I2C_ADD)

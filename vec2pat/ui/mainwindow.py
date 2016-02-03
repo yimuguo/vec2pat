@@ -117,14 +117,14 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
             if self.vc3_filename is not '':
                 self.vc3_path_file.setText(self.vc3_filename)
                 path_break = self.vc3_filename.split('/')
-                path_break = path_break[0:-2]
+                path_break = path_break[0:-1]
                 self.vc3_path = "/".join(path_break)
                 self.vc3_path_pat.setText(self.vc3_path)
             print(self.vc3_filename)
             if self.vc3_filename is not '':
                 self.vc3_path_file.setText(self.vc3_filename)
                 for workbook in glob.glob(os.path.join(self.vc5_path, "*FT*.xls")):
-                        self.vc5_path_workbook.setText(workbook)
+                    self.vc5_path_workbook.setText(workbook)
 
     def gen_pat_btn_vc5(self):
         for x in range(0, 4):
