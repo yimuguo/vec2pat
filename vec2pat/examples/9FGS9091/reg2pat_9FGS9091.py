@@ -28,10 +28,10 @@ w1byte_pat(40, '20', 'OTP_burn_stop', I2C_ADD)
 w1byte_pat(42, '01', 'OTP_start_addr1', I2C_ADD)
 w1byte_pat(42, '00', 'OTP_start_addr0', I2C_ADD)
 w1byte_pat(44, '37', 'OTP_end_addr37', I2C_ADD)
-w1byte_pat(46, '00', 'CSR_bn_addr0', I2C_ADD)
-w1byte_pat(46, '01', 'CSR_bn_addr1', I2C_ADD)
-w1byte_pat(47, '00', 'CSR_rd_addr0', I2C_ADD)
-w1byte_pat(47, '01', 'CSR_rd_addr1', I2C_ADD)
+w1byte_pat(45, '00', 'CSR_bn_addr0', I2C_ADD)
+w1byte_pat(45, '01', 'CSR_bn_addr1', I2C_ADD)
+w1byte_pat(46, '00', 'CSR_rd_addr0', I2C_ADD)
+w1byte_pat(46, '01', 'CSR_rd_addr1', I2C_ADD)
 
 # ==================VC3====================
 if VC3_FLAG == ('Y' or 'y'):
