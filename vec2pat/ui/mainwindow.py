@@ -1,4 +1,4 @@
-from PyQt4 import QtGui
+from PyQt4 import QtGui, uic
 import sys
 from vec2pat.ui import windowui
 from vec2pat import vc5_summary
@@ -7,7 +7,7 @@ import os
 import glob
 
 
-class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
+class Window(QtGui.QMainWindow):
     # vc5_path = r"S:\Test_Eng\J750_HW_SW\VC5\AK652_008_802_Samsung\code"
     # vc5_filename = r"S:/Test_Eng/J750_HW_SW/VC5/AK652_008_802_Samsung/code/5P49V5901-802_B#1_Summary.txt"
     # vc3_path = "S:\\Test_Eng\\J750_SW_HW\\VC5\\AK652_008_802_Samsung\\Code910"
@@ -19,8 +19,10 @@ class Window(QtGui.QMainWindow, windowui.Ui_MainWindow):
     vc3_path = r"..\tests\code910"
 
     def __init__(self):
-        super(self.__class__, self).__init__()
-        self.setupUi(self)  # This is defined in design.py file automatically
+        # super(self.__class__, self).__init__()
+        # self.setupUi(self)  # This is defined in design.py file automatically
+        super(Window, self).__init__()
+        uic.loadUi("mainwindow.ui", self)
         # ======================VC5 Tab=====================================#
         self.vc5_path_file.setText(self.vc5_filename)
         self.vc5_btn_file.clicked.connect(lambda: self.brws_conf_btn('vc5'))
