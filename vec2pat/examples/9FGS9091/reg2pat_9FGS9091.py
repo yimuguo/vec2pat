@@ -2,7 +2,7 @@ from vec2pat import *
 __author__ = 'yguo'
 VC3_FLAG = 'N'
 VC3_LOG_DEL_FLAG = 'N'
-I2C_ADD = 'D0'
+I2C_ADD = 'D0 '
 os.chdir('S:\Test_Eng\J750_HW_SW\9FGSxxxx\9FGS9091\AKC692-008-009\\patterns\\')
 
 
@@ -10,14 +10,13 @@ OutputsHiz_hex = ['80', '5F', '8F', '61', '44', '8F', '61', '44', '8F', '61', '4
 wbytes_pat(OutputsHiz_hex, 'OutputsHiz', I2C_ADD)
 rbytes_pat(OutputsHiz_hex, 'OutputsHiz_r', I2C_ADD)
 
-LU_code_string = '80	0F	0F	34	64	0F	34	64	0F	34	64	0F	34	64	80	80	83	1A	0C	80	02	' \
+LU_code_string = '80	0F	0F	34	64	0F	34	64	0F	34	64	0F	34	64	80	80	83	1A	0C	80	0 02	' \
                  '96	0	0	0	A0	FC	AF	0	0A	24	12	18	0	0	21	E5'
 LU_code = re.split('\s+', LU_code_string)
 wbytes_pat(LU_code, 'LU_Write', I2C_ADD)
 rbytes_pat(LU_code, 'LU_Read', I2C_ADD)
 
-IBM_String = '80 4F 8F 12 14 8F 12 14 8F 12 14 8F 12 14 90 90 83 1A 0C 80 00 02 96 00 00 00 A0 FC AF' \
-             ' 00 0A 24 12 18 00 00 21 E5'
+IBM_String = '80 4F 8E 12 14 8E 12 14 8E 12 14 8F 12 14 8E 8E 83 1A 0C 80 00 02 96 00 00 00 FF F4 AF 00 0A 24 12 18 00 00 21 E5'
 IBM_code = re.split('\s+', IBM_String)
 wbytes_pat(IBM_code, 'IBM_Write', I2C_ADD)
 rbytes_pat(IBM_code, 'IBM_Read', I2C_ADD)
@@ -36,8 +35,8 @@ w1byte_pat(46, '00', 'CSR_rd_addr0', I2C_ADD)
 w1byte_pat(46, '01', 'CSR_rd_addr1', I2C_ADD)
 w1byte_pat(45, 26, 'CSR_bn_addr26_band', I2C_ADD)
 w1byte_pat(46, 26, 'CSR_rd_addr26_band', I2C_ADD)
-w1byte_pat(42, 26, 'OTP_start_addr26_band', I2C_ADD)
-w1byte_pat(44, 26, 'OTP_end_addr26_band', I2C_ADD)
+w1byte_pat(42, 26, 'OTP_start_band_CFG0', I2C_ADD)
+w1byte_pat(44, 26, 'OTP_end_band_CFG0', I2C_ADD)
 # ==================VC3====================
 if VC3_FLAG == ('Y' or 'y'):
     os.chdir('..\\..\\..\\code910\\')
