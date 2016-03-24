@@ -50,8 +50,10 @@ def wbytes_pat(hexlist, name, i2c_address='D4'):
     wbytes.close_pat()
 
 
-def rbytes_pat(hexlist, name, i2c_address='D4'):
+def rbytes_pat(hexlist, name, i2c_address='D4', vcomon=True, vco_bandn=0x11):
     wbytes = WritePat('%s.atp' % name, i2c_address)
+    wbytes.vco_mon = vcomon
+    wbytes.vco_band_byte = vco_bandn
     wbytes.write_header(name)
     wbytes.rbyte_lst(hexlist)
     wbytes.close_pat()
@@ -155,7 +157,7 @@ class WritePat(object):
         self.write_byte(int(self.i2c_address, 16) + 1, 'Restart')
         for i in range(int(startbyte), int(stopbyte) - 1):
             if (self.vco_mon is False) and (i == self.vco_band_byte):
-                self.write_pat('', '', '', 'read_byte0x11', 'VCO_band_byte')
+                self.write_pat('', '', '', 'read_byte' + str(self.vco_band_byte), 'VCO_band_byte')
                 for x in range(0, 8):
                     self.write_pat('readt', 1, 'X')
                 self.write_pat('mack', 1, 0)
