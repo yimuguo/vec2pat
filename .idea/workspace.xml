@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="aa606ab2-8338-4c1b-9266-074a6023f825" name="Default" comment="Minor fixes and code update for 9FGS">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py" afterPath="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vec2pat/__init__.py" afterPath="$PROJECT_DIR$/vec2pat/__init__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGV1004.py" afterPath="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGV1004.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vec2pat/ui/mainwindow.py" afterPath="$PROJECT_DIR$/vec2pat/ui/mainwindow.py" />
     </list>
     <list id="11f3af06-122f-4053-aee4-861784025bbd" name="Pycharm" comment="" />
     <ignored path="vec2pat.iws" />
@@ -19,9 +20,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/vec2pat$reg2pat_9FGS9091.coverage" NAME="reg2pat_9FGS9091 Coverage Results" MODIFIED="1458855494035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vec2pat/examples/9FGS9091" />
     <SUITE FILE_PATH="coverage/vec2pat$mainwindow.coverage" NAME="mainwindow Coverage Results" MODIFIED="1455065737880" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vec2pat/ui" />
-    <SUITE FILE_PATH="coverage/vec2pat$reg2pat_9FGV1004.coverage" NAME="reg2pat_9FGV1004 Coverage Results" MODIFIED="1456278138245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vec2pat/examples/9FGS9091" />
-    <SUITE FILE_PATH="coverage/vec2pat$reg2pat_9FGS9091.coverage" NAME="reg2pat_9FGS9091 Coverage Results" MODIFIED="1456537358540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vec2pat/examples/9FGS9091" />
+    <SUITE FILE_PATH="coverage/vec2pat$reg2pat_9FGV1004.coverage" NAME="reg2pat_9FGV1004 Coverage Results" MODIFIED="1459300518853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/vec2pat/examples/9FGS9091" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,42 +32,24 @@
     <favorites_list name="vec2pat" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44174758">
+    <splitter split-orientation="horizontal" split-proportion="0.4559848">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="vc5_summary.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="vc5_summary.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+                <state relative-caret-position="126">
+                  <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mainwindow.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#28#0" expanded="true" />
-                    <element signature="e#788#1873#0" expanded="false" />
-                    <element signature="e#1932#2353#0" expanded="false" />
-                    <element signature="e#2394#3886#0" expanded="false" />
-                    <element signature="e#3947#7394#0" expanded="false" />
-                    <element signature="e#7435#8238#0" expanded="false" />
-                    <element signature="e#9079#9238#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="reg2pat.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="reg2pat.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.33858266">
-                  <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
+                <state relative-caret-position="63">
+                  <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -76,21 +59,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="vc5_summary.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="reg2pat_VC5.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="reg2pat_VC5.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56692916">
-                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+                <state relative-caret-position="903">
+                  <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -99,17 +72,17 @@
           <file leaf-file-name="reg2pat_9FGS9091.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+                <state relative-caret-position="378">
+                  <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="reg2pat_9FGV1004.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="reg2pat_9FGV1004.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGV1004.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state relative-caret-position="252">
                   <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
                   <folding />
                 </state>
@@ -119,9 +92,11 @@
           <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vec2pat/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-                  <folding />
+                <state relative-caret-position="42">
+                  <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -129,7 +104,7 @@
           <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/vec2pat/ui/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
+                <state relative-caret-position="0">
                   <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -154,9 +129,11 @@
         <option value="$PROJECT_DIR$/vec2pat/vc5_summary.py" />
         <option value="$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py" />
         <option value="$PROJECT_DIR$/vec2pat/ui/__init__.py" />
+        <option value="$PROJECT_DIR$/vec2pat/reg2pat.py" />
+        <option value="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py" />
         <option value="$PROJECT_DIR$/vec2pat/ui/mainwindow.py" />
         <option value="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGV1004.py" />
-        <option value="$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py" />
+        <option value="$PROJECT_DIR$/vec2pat/__init__.py" />
       </list>
     </option>
   </component>
@@ -173,8 +150,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -201,49 +180,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vec2pat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../minichar" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="SearchEverywhereHistoryKey" value="plugins&#9;ACTION&#9;WelcomeScreen.Plugins&#10;decrease&#9;ACTION&#9;EditorDecreaseFontSize&#10;font&#9;ACTION&#9;EditorDecreaseFontSize" />
     <property name="project.structure.last.edited" value="Project" />
@@ -259,7 +207,7 @@
     </option>
     <option name="myIpythonEnabled" value="false" />
   </component>
-  <component name="RunManager" selected="Python.reg2pat_9FGS9091">
+  <component name="RunManager" selected="Python.reg2pat_9FGV1004">
     <configuration default="false" name="mainwindow" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -383,7 +331,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="vec2pat" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -394,6 +356,7 @@
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run-script" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -514,13 +477,15 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.reg2pat_9FGS9091" />
-        <item index="1" class="java.lang.String" itemvalue="Python.reg2pat_9FGV1004" />
+        <item index="0" class="java.lang.String" itemvalue="Python.reg2pat_9FGV1004" />
+        <item index="1" class="java.lang.String" itemvalue="Python.reg2pat_9FGS9091" />
         <item index="2" class="java.lang.String" itemvalue="Python.mainwindow" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -530,6 +495,7 @@
       <changelist id="11f3af06-122f-4053-aee4-861784025bbd" name="Pycharm" comment="" />
       <created>1452148799176</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1452148799176</updated>
       <workItem from="1453969708570" duration="130000" />
       <workItem from="1453969910072" duration="42000" />
@@ -541,32 +507,42 @@
     <task id="LOCAL-00001" summary="Minor fixes and code update for 9FGS">
       <created>1454475284574</created>
       <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
       <updated>1454475284574</updated>
     </task>
     <task id="LOCAL-00002" summary="Minor fixes and code update for 9FGS">
       <created>1454747654019</created>
       <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
       <updated>1454747654019</updated>
     </task>
     <task id="LOCAL-00003" summary="Minor fixes and code update for 9FGS">
       <created>1455676324047</created>
       <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1455676324047</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed Bug for VCO monitor byte">
+      <created>1458858711209</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1458858711209</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="5403000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37944984" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15991472" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26309794" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -576,7 +552,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34291378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51140064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32898173" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -605,23 +581,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Minor fixes and code update for 9FGS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes and code update for 9FGS" />
+    <MESSAGE value="Fixed Bug for VCO monitor byte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Bug for VCO monitor byte" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py</url>
-          <line>20</line>
+          <line>19</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/vec2pat/reg2pat.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -630,17 +607,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -648,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -656,23 +625,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="69" column="28" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -680,7 +640,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -688,7 +648,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -696,23 +656,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -720,7 +671,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -728,7 +679,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -736,23 +687,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -760,7 +702,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -768,7 +710,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -776,23 +718,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -800,7 +733,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -808,7 +741,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -816,23 +749,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -840,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -848,7 +772,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -856,23 +780,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -880,7 +795,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -888,7 +803,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -896,23 +811,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="34" column="72" selection-start-line="34" selection-start-column="72" selection-end-line="34" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -920,7 +826,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -928,7 +834,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -936,23 +842,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -960,7 +857,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -968,7 +865,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -976,23 +873,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -1000,7 +888,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -1008,7 +896,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -1016,23 +904,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
           <folding />
         </state>
@@ -1040,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
           <folding />
         </state>
@@ -1048,80 +927,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <element signature="e#788#1873#0" expanded="false" />
-            <element signature="e#1932#2353#0" expanded="false" />
-            <element signature="e#2394#3886#0" expanded="false" />
-            <element signature="e#3947#7394#0" expanded="false" />
-            <element signature="e#7435#8238#0" expanded="false" />
-            <element signature="e#9079#9238#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/ui/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/ui/mainwindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/ui/windowui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        <state relative-caret-position="42">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGV1004.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state relative-caret-position="252">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vec2pat/examples/9FGS9091/reg2pat_9FGS9091.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vec2pat/vc5_summary.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vec2pat/reg2pat.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33858266">
-          <caret line="170" column="8" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vec2pat/examples/VC5_910/reg2pat_VC5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56692916">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding />
         </state>
       </provider>

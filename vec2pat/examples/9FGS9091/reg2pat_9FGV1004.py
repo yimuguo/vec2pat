@@ -3,13 +3,18 @@ __author__ = 'yguo'
 VC3_FLAG = 'N'
 VC3_LOG_DEL_FLAG = 'N'
 I2C_ADD = 'D0'
-os.chdir('S:\\Test_Eng\\J750_HW_SW\\9FGSxxxx\\9FGV1004\\AKC692_010\\patterns\\')
+os.chdir(r"S:\Test_Eng\J750_HW_SW\9FGSxxxx\9FGV1004\HTOL_010\patterns\\")
 
 OutputsHiz = '80 5F 8F 61 44 8F 61 44 8F 61 44 8F 61 44 80 80 83 1A' \
              ' 0C 80 00 02 96 00 00 00 A0 F9 AF 00 0F 24 12 18 00 00 21 F5'
 OutputsHiz_hex = re.split('\s+', OutputsHiz)
 wbytes_pat(OutputsHiz_hex, 'OutputsHiz', I2C_ADD)
 rbytes_pat(OutputsHiz_hex, 'OutputsHiz_r', I2C_ADD)
+
+HTOL_string = '80 4F BF 11 22 DF 12 14 8E 12 14 8E 12 14 8C 8C 83 E0 0A DA A0 01 CA 00 81 00 A0 F9 AF 00 0F 36 08 09 00 00 F6 FD'
+HTOL = HTOL_string.split()
+wbytes_pat(HTOL, 'HTOL_w', I2C_ADD)
+rbytes_pat(HTOL, 'HTOL_r', I2C_ADD)
 
 LU_code_string = '80 0F 0F 01 44 0F 01 44 0F 01 44 0F 01 44 85 85 00 00 ' \
                  '0C 80 00 00 00 00 80 00 A0 39 AF 00 0F 32 19 19 00 00 F1 FD'
