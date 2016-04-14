@@ -23,7 +23,7 @@ IBM_code[27] = int(IBM_code[27], 16) & 0b11110111
 wbytes_pat(IBM_code, 'IBM_Write', I2C_ADD)
 rbytes_pat(IBM_code, 'IBM_Read', I2C_ADD, False, 26)
 
-htolStr = '80 4F BF 11 22 DF 12 14 8E 12 14 8E 12 14 8E 8E 83 1A 0C 80 00 02 96 00 00 00 A0 FC AF 00 0A 2A 12 09 00 00 21 E5'
+htolStr = '80 4F BF 11 22 DF 12 14 8E 12 14 8E 12 14 8E 8E 83 1A 0C 80 00 02 96 00 00 00 A0 FC AF 00 FA 38 12 09 00 FF 21 F5'
 htol = htolStr.split()
 wbytes_pat(htol, "HTOL_Write", I2C_ADD)
 rbytes_pat(htol, "HTOL_Read", I2C_ADD)
