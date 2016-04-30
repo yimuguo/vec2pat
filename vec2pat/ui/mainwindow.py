@@ -1,6 +1,6 @@
-from PyQt4 import QtGui, uic
+from PyQt5 import uic
+import PyQt5.QtWidgets as QtGui
 import sys
-from vec2pat.ui import windowui
 from vec2pat import vc5_summary
 from vec2pat import reg2pat
 import os
