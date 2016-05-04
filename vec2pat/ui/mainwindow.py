@@ -1,5 +1,4 @@
-from PyQt5 import uic
-import PyQt5.QtWidgets as QtGui
+from PyQt4 import uic, QtGui
 import sys
 from vec2pat import vc5_summary
 from vec2pat import reg2pat
@@ -48,25 +47,24 @@ class Window(QtGui.QMainWindow):
 
     def compile_btn_vc5(self):
         for x in range(0, 4):
-            if self.vc5.conf_enable[x] == 1:
-                self.otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x, self.vc5.i2c_address)
-                if self.atp_gen_vc5.checkState() == 2:
-                    self.otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                    self.otp_wconfig.wbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                    self.otp_wconfig.close_pat()
-                self.otp_wconfig.compile_pat(self.vc5_path)
-                # Write Reading Register Patterns
-                self.otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + 'OTP_rconfig%d.atp' % x, self.vc5.i2c_address)
-                if self.atp_gen_vc5.checkState() == 2:
-                    self.otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                    self.otp_rconfig.rbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                    self.otp_rconfig.close_pat()
-                self.otp_rconfig.compile_pat(self.vc5_path)
-                if self.del_atp_vc5.checkState() == 2:
-                    os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.LOG" % x))
-                    os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.atp" % x))
-                    os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_rconfig%d.LOG" % x))
-                    os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_rconfig%d.atp" % x))
+            self.otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x, self.vc5.i2c_address)
+            if self.atp_gen_vc5.checkState() == 2:
+                self.otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+                self.otp_wconfig.wbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
+                self.otp_wconfig.close_pat()
+            self.otp_wconfig.compile_pat(self.vc5_path)
+            # Write Reading Register Patterns
+            self.otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + 'OTP_rconfig%d.atp' % x, self.vc5.i2c_address)
+            if self.atp_gen_vc5.checkState() == 2:
+                self.otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+                self.otp_rconfig.rbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
+                self.otp_rconfig.close_pat()
+            self.otp_rconfig.compile_pat(self.vc5_path)
+            if self.del_atp_vc5.checkState() == 2:
+                os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.LOG" % x))
+                os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.atp" % x))
+                os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_rconfig%d.LOG" % x))
+                os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_rconfig%d.atp" % x))
 
     def brws_conf_btn(self, tab_type, btn_type=0):
         if tab_type == 'vc5':
