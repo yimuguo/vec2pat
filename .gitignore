@@ -8,3 +8,6 @@
 out
 gen
 .idea/workspace.xml
+/.vs
+/vec2pat.sln
+/vec2pat.pyproj

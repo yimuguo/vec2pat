@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="general">
        <attribute name="title">
@@ -77,7 +77,7 @@
         <property name="geometry">
          <rect>
           <x>380</x>
-          <y>250</y>
+          <y>270</y>
           <width>131</width>
           <height>16</height>
          </rect>
@@ -239,6 +239,68 @@
         </property>
         <property name="text">
          <string>I2C Address</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="numofpat">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>70</y>
+          <width>31</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="editable">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>50</y>
+          <width>61</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string># of Pat</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="atp_gen">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>250</y>
+          <width>131</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Auto-generate atp fiels</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
         </property>
        </widget>
       </widget>
@@ -543,34 +605,6 @@
           <height>21</height>
          </rect>
         </property>
-       </widget>
-       <widget class="QComboBox" name="numofpat">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>30</y>
-          <width>31</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="editable">
-         <bool>true</bool>
-        </property>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </item>
        </widget>
        <widget class="QLabel" name="label_4">
         <property name="geometry">

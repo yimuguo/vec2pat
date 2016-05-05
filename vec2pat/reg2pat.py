@@ -8,7 +8,7 @@ def find_vc3_code(search_path='..\\code910\\'):
     try:
         for file in os.listdir(search_path):
             if file.endswith(".txt"):
-                config_file = open(file, mode='rb')
+                config_file = open(os.path.join(search_path, file), mode='rb')
                 vec_data = config_file.read()
                 vec_string = vec_data.decode('utf-16')
                 vec_data = vec_string.split('\r\n')
@@ -17,22 +17,27 @@ def find_vc3_code(search_path='..\\code910\\'):
                         hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
                         return hexlist
     except (FileNotFoundError, FileExistsError):
-        found_code = True
-        while found_code:
-            print('!!!!!!!!!!!!! No Configuration File in Code Folder !!!!!!!!!!!!!' + os.getcwd() + '\n')
-            file = input("   Please Manually Input VC3 Configuration File with Valid Path in txt Format:  ")
-            try:
-                config_file = open(file, mode='rb')
-                vec_data = config_file.read()
-                vec_string = vec_data.decode('utf-16')
-                vec_data = vec_string.split('\r\n')
-                for line in vec_data:               # Read Code into List
-                    if line[:12] == "<Binary Hex=" and len(line) > 400:
-                        found_code = False
-                        hexlist = [line[13:-3][i:i + 2] for i in range(0, len(line[13:-3]), 2)]
-                        return hexlist
-            except (FileExistsError, FileNotFoundError):
-                pass
+        print("Code not found please try again")
+
+
+def gen_vc3(path='.', workbook='..', compileflag=True, delatpflag=True):
+    vc3_code = find_vc3_code(path)
+    vc3_divpat = 3
+    for i in range(0, vc3_divpat):
+        vc3_910 = WritePat(os.path.join(path, "vc3_part%d.atp" % (i + 1)))
+        vc3_910.write_header('vc3_910_%dto%d' % (i * int(208 / vc3_divpat),
+                                                 (i + 1) * int(208 / vc3_divpat)), 'CSCL', 'CSDA')
+        vc3_910.write_byte('00', 'Prowrite_CMD')
+        if i == (vc3_divpat - 1):
+            vc3_910.wbyte_lst(vc3_code, i * (int(208 / vc3_divpat)), 208)
+        else:
+            vc3_910.wbyte_lst(vc3_code, i * (int(208 / vc3_divpat)), (i + 1) * (int(208 / vc3_divpat)))
+        vc3_910.close_pat()
+        if compileflag:
+            vc3_910.compile_pat(workbook)
+        if delatpflag:
+            os.system("del vc3_part%d.atp" % (i + 1))
+            os.system("del vc3_part%d.LOG" % (i + 1))
 
 
 def w1byte_pat(bytenum, byte, name='w1byte', i2c_address='D4'):
@@ -141,8 +146,8 @@ class WritePat(object):
         else:
             sys.exit()
 
-    def wbyte_lst(self, hexlist, startbyte=0, stopbyte='all'):
-        if stopbyte == 'all':
+    def wbyte_lst(self, hexlist, startbyte=0, stopbyte=0):
+        if stopbyte == 0:
             stopbyte = len(hexlist)
         self.write_byte(int(startbyte), 'Start_w_byte')
         for i in range(0, int(stopbyte)):

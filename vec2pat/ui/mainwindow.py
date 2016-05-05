@@ -34,6 +34,8 @@ class Window(QtGui.QMainWindow):
         self.vc3_btn_file.clicked.connect(lambda: self.brws_conf_btn('vc3'))
         self.vc3_btn_pat.clicked.connect(lambda: self.brws_dir_btn('vc3'))
         self.vc3_btn_workbook.clicked.connect(lambda: self.brws_conf_btn('vc3', 1))
+        self.vc3_btn_gen.clicked.connect(lambda: self.gen_pat_btn_vc3())
+        self.vc3_btn_compile.clicked.connect(lambda: self.compile_btn_vc3())
 
     def on_push_brws_btn(self, path, title_txt):
         #   This is the non-native dialog, speed problem with network drives
@@ -45,21 +47,33 @@ class Window(QtGui.QMainWindow):
         if dialog.exec_() == QtGui.QDialog.Accepted:
             self.vc5_filename = dialog.selectedFiles()[0]
 
+    def compile_btn_vc3(self):
+        path_break = self.vc3_path.split('/')
+        path_break = path_break[0:-1]
+        if self.atp_gen_vc3.checkState() == 2:
+            if self.del_atp_vc3.checkState() == 2:
+                reg2pat.gen_vc3(self.vc3_path, "/".join(path_break), True, True)
+            else:
+                reg2pat.gen_vc3(self.vc3_path, "/".join(path_break), True, False)
+        else:
+            for x in range(1, 4):
+                vc3pat = reg2pat.WritePat(self.vc3_path_pat.text() + "/vc3_part%d.atp" % x)
+                vc3pat.compile_pat("/".join(path_break))
+                if self.del_atp_vc5.checkState() == 2:
+                    os.remove(os.path.join(self.vc3_path_pat.text(), "vc3_part%d.LOG" % x))
+                    os.remove(os.path.join(self.vc3_path_pat.text(), "vc3_part%d.atp" % x))
+
     def compile_btn_vc5(self):
+        if self.atp_gen_vc5.checkState() == 2:
+            self.gen_pat_btn_vc5()
         for x in range(0, 4):
-            self.otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x, self.vc5.i2c_address)
-            if self.atp_gen_vc5.checkState() == 2:
-                self.otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                self.otp_wconfig.wbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                self.otp_wconfig.close_pat()
-            self.otp_wconfig.compile_pat(self.vc5_path)
+            otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x,
+                                           self.vc5.i2c_address)
+            otp_wconfig.compile_pat(self.vc5_path)
             # Write Reading Register Patterns
-            self.otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + 'OTP_rconfig%d.atp' % x, self.vc5.i2c_address)
-            if self.atp_gen_vc5.checkState() == 2:
-                self.otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                self.otp_rconfig.rbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                self.otp_rconfig.close_pat()
-            self.otp_rconfig.compile_pat(self.vc5_path)
+            otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + 'OTP_rconfig%d.atp' % x,
+                                           self.vc5.i2c_address)
+            otp_rconfig.compile_pat(self.vc5_path)
             if self.del_atp_vc5.checkState() == 2:
                 os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.LOG" % x))
                 os.remove(os.path.join(self.vc5_path_pat.text(), "OTP_wconfig%d.atp" % x))
@@ -108,36 +122,59 @@ class Window(QtGui.QMainWindow):
                     path_break = path_break[0:-1]
                     self.vc5_path = "/".join(path_break)
         elif tab_type == 'vc3':
-            self.vc3_filename = QtGui.QFileDialog.getOpenFileName(
-                                self,
-                                "Open VersaClock4 Txt Configuration File",
-                                self.vc3_path_file.text(),
-                                "Text files (*.txt);; All Files (*)",
-                                QtGui.QFileDialog.ReadOnly)
-            if self.vc3_filename is not '':
-                self.vc3_path_file.setText(self.vc3_filename)
-                path_break = self.vc3_filename.split('/')
-                path_break = path_break[0:-1]
-                self.vc3_path = "/".join(path_break)
-                self.vc3_path_pat.setText(self.vc3_path)
-            print(self.vc3_filename)
-            if self.vc3_filename is not '':
-                self.vc3_path_file.setText(self.vc3_filename)
-                for workbook in glob.glob(os.path.join(self.vc5_path, "*FT*.xls")):
-                    self.vc5_path_workbook.setText(workbook)
+            if btn_type != 1:
+                self.vc3_filename = QtGui.QFileDialog.getOpenFileName(
+                                    self,
+                                    "Open VersaClock4 Txt Configuration File",
+                                    self.vc3_path_file.text(),
+                                    "Text files (*.txt);; All Files (*)",
+                                    QtGui.QFileDialog.ReadOnly)
+                if self.vc3_filename is not '':
+                    self.vc3_path_file.setText(self.vc3_filename)
+                    path_break = self.vc3_filename.split('/')
+                    path_break = path_break[0:-1]
+                    self.vc3_path = "/".join(path_break)
+                    print(self.vc3_path)
+                    self.vc3_path_pat.setText(self.vc3_path)
+                print(self.vc3_filename)
+                if self.vc3_filename is not '':
+                    self.vc3_path_file.setText(self.vc3_filename)
+                    path_break = self.vc3_filename.split('/')
+                    path_break = path_break[0:-2]
+                    print(path_break)
+                    for workbook in glob.glob(os.path.join("/".join(path_break), "*FT*.xls")):
+                        self.vc3_path_workbook.setText(workbook)
+            else:
+                workbook_filename = QtGui.QFileDialog.getOpenFileName(
+                                    self,
+                                    "Select IG-XL Workbook",
+                                    self.vc3_path_workbook.text(),  # Need to break the current input box into path
+                                    "IG-XL Workbook (*.xls; *.xlsx);; Text files (*.txt);; All Files (*)",
+                                    QtGui.QFileDialog.ReadOnly)
+                if workbook_filename is not '':
+                    self.vc3_path_workbook.setText(workbook_filename)
+                    path_break = workbook_filename.split('/')
+                    path_break = path_break[0:-1]
+                    self.vc3_path = "/".join(path_break)
 
     def gen_pat_btn_vc5(self):
         for x in range(0, 4):
-            if self.vc5.conf_enable[x] == 1:
-                self.otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x, self.vc5.i2c_address)
-                self.otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                self.otp_wconfig.wbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                self.otp_wconfig.close_pat()
-                # Write Reading Register Patterns
-                self.otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + 'OTP_rconfig%d.atp' % x, self.vc5.i2c_address)
-                self.otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
-                self.otp_rconfig.rbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
-                self.otp_rconfig.close_pat()
+            otp_wconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_wconfig%d.atp' % x,
+                                           self.vc5.i2c_address)
+            otp_wconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+            otp_wconfig.wbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
+            otp_wconfig.close_pat()
+            # Write Reading Register Patterns
+            otp_rconfig = reg2pat.WritePat(self.vc5_path_pat.text() + '/OTP_rconfig%d.atp' % x,
+                                           self.vc5.i2c_address)
+            otp_rconfig.write_header('OTP_config%d' % x, 'SCLsel0', 'SDAsel1')
+            otp_rconfig.rbyte_lst(self.vc5.conf[x], 0, int('0x69', 0) + 1)
+            otp_rconfig.close_pat()
+
+    def gen_pat_btn_vc3(self):
+        path_break = self.vc3_path.split('/')
+        path_break = path_break[0:-1]
+        reg2pat.gen_vc3(self.vc3_path, "/".join(path_break), False, False)
 
     def brws_dir_btn(self, tab_type):
         if tab_type == 'vc5':
