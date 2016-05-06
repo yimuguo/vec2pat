@@ -150,8 +150,8 @@ class WritePat(object):
         if stopbyte == 0:
             stopbyte = len(hexlist)
         self.write_byte(int(startbyte), 'Start_w_byte')
-        for i in range(0, int(stopbyte)):
-            self.write_byte(hexlist[i], 'write_byte%s' % hex(i+int(startbyte)))
+        for i in range(int(startbyte), int(stopbyte)):
+            self.write_byte(hexlist[i], 'write_byte%s' % hex(i))
 
     def rbyte_lst(self, hexlist, startbyte=0, stopbyte='all'):
         if stopbyte == 'all':
@@ -160,15 +160,15 @@ class WritePat(object):
         self.write_pat('noop', 1, 1)
         self.write_pat('bstar', 1, 1)
         self.write_byte(int(self.i2c_address, 16) + 1, 'Restart')
-        for i in range(0, int(stopbyte) - 1):
+        for i in range(int(startbyte), int(stopbyte) - 1):
             if (self.vco_mon is False) and (i == self.vco_band_byte):
                 self.write_pat('', '', '', 'read_byte' + str(self.vco_band_byte), 'VCO_band_byte')
                 for x in range(0, 8):
                     self.write_pat('readt', 1, 'X')
                 self.write_pat('mack', 1, 0)
                 continue
-            self.read_byte(hexlist[i], 'read_byte%s' % hex(i+int(startbyte)))
-        self.read_byte(hexlist[stopbyte-1], 'read_byte%s' % hex(stopbyte+int(startbyte)-1), last_byte=True)
+            self.read_byte(hexlist[i], 'read_byte%s' % hex(i))
+        self.read_byte(hexlist[stopbyte-1], 'read_byte%s' % hex(stopbyte - 1), last_byte=True)
 
     def close_pat(self):
         self.pat.write('\t\t\t> bstop\t\t1\t0;\n')

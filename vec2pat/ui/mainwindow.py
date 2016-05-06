@@ -4,6 +4,7 @@ from vec2pat import vc5_summary
 from vec2pat import reg2pat
 import os
 import glob
+import vec2pat.ui.mmtpatui
 
 
 class Window(QtGui.QMainWindow):
@@ -36,6 +37,8 @@ class Window(QtGui.QMainWindow):
         self.vc3_btn_workbook.clicked.connect(lambda: self.brws_conf_btn('vc3', 1))
         self.vc3_btn_gen.clicked.connect(lambda: self.gen_pat_btn_vc3())
         self.vc3_btn_compile.clicked.connect(lambda: self.compile_btn_vc3())
+        # ======================General Tab===================================
+        self.
 
     def on_push_brws_btn(self, path, title_txt):
         #   This is the non-native dialog, speed problem with network drives
@@ -59,7 +62,7 @@ class Window(QtGui.QMainWindow):
             for x in range(1, 4):
                 vc3pat = reg2pat.WritePat(self.vc3_path_pat.text() + "/vc3_part%d.atp" % x)
                 vc3pat.compile_pat("/".join(path_break))
-                if self.del_atp_vc5.checkState() == 2:
+                if self.del_atp_vc3.checkState() == 2:
                     os.remove(os.path.join(self.vc3_path_pat.text(), "vc3_part%d.LOG" % x))
                     os.remove(os.path.join(self.vc3_path_pat.text(), "vc3_part%d.atp" % x))
 
