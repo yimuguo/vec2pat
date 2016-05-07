@@ -146,10 +146,12 @@ class WritePat(object):
         else:
             sys.exit()
 
-    def wbyte_lst(self, hexlist, startbyte=0, stopbyte=0):
+    def wbyte_lst(self, hexlist, startbyte=0, stopbyte=0, offset=0):
         if stopbyte == 0:
             stopbyte = len(hexlist)
-        self.write_byte(int(startbyte), 'Start_w_byte')
+        if offset == 0:
+            offset = startbyte
+        self.write_byte(int(offset), 'Start_w_byte')
         for i in range(int(startbyte), int(stopbyte)):
             self.write_byte(hexlist[i], 'write_byte%s' % hex(i))
 
