@@ -16,16 +16,18 @@ LU_code = re.split('\s+', LU_code_string)
 wbytes_pat(LU_code, 'LU_Write', I2C_ADD)
 rbytes_pat(LU_code, 'LU_Read', I2C_ADD)
 
-strCFG0 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 84 22 09 0B 85 01 66 00 81 00 A0 F9 AF 00 0A 24 18 18 00 00 F5 6D'
+strCFG0 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 84 22 09 0B 85 01 66 00 81 00 A0 F9 AF 00 0A 24 18 18 00 00 F5 6D 20 50'
 config0 = strCFG0.split()
 config0[26] = 'C0'
+config0[27] = 'FC'
 config0[27] = int(config0[27], 16) & 0b11110111
 wbytes_pat(config0, 'writeCFG0', I2C_ADD)
 rbytes_pat(config0, 'readCFG0', I2C_ADD, False, 26)
 
-strCFG1 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 04 22 09 00 00 01 66 00 81 00 A0 F9 AF 00 0A 24 18 18 00 00 F5 6D'
+strCFG1 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 04 22 09 00 00 01 66 00 81 00 A0 F9 AF 00 0A 24 18 18 00 00 F5 6D 20 50'
 config1 = strCFG1.split()
 config1[26] = 'C0'
+config1[27] = 'FC'
 config1[27] = int(config1[27], 16) & 0b11110111
 wbytes_pat(config1, 'writeCFG1', I2C_ADD)
 rbytes_pat(config1, 'readCFG1', I2C_ADD, False, 26)
@@ -62,7 +64,8 @@ wbytes_pat(write55LUT2, 'write_55LUT2', I2C_ADD, 0x6f)
 rbytes_pat(write55LUT2, 'read_55LUT2', I2C_ADD, str_byte=0x6f)
 
 # ============OTP Section==============
-os.chdir('S:\Test_Eng\J750_HW_SW\9FGSxxxx\9FGS9091\AK692_008\patterns\%s\OTP' % I2C_ADD)
+currPath = os.getcwd()
+os.chdir(currPath + '\OTP\\')
 # w1byte_pat(40, 00, 'en_temp_cal', I2C_ADD)
 w1byte_pat(40, '28', 'OTP_burn_start', I2C_ADD)
 w1byte_pat(40, '20', 'OTP_burn_stop', I2C_ADD)
@@ -71,18 +74,18 @@ w1byte_pat(42, '00', 'OTP_start_addr0', I2C_ADD)
 w1byte_pat(44, 37, 'OTP_end_addr37', I2C_ADD)
 
 w1byte_pat(42, 1, 'OTP_start_cfg0', I2C_ADD)
-w1byte_pat(44, 37, 'OTP_end_cfg0', I2C_ADD)
+w1byte_pat(44, 0x27, 'OTP_end_cfg0', I2C_ADD)
 
-w1byte_pat(42, 0x26, 'OTP_start_cfg1', I2C_ADD)
-w1byte_pat(44, 0x4a, 'OTP_end_cfg1', I2C_ADD)
+w1byte_pat(42, 0x28, 'OTP_start_cfg1', I2C_ADD)
+w1byte_pat(44, 0x4e, 'OTP_end_cfg1', I2C_ADD)
 
-w1byte_pat(42, 0x4b, 'OTP_start_cfg2', I2C_ADD)
-w1byte_pat(44, 0x6f, 'OTP_end_cfg2', I2C_ADD)
+w1byte_pat(42, 0x4f, 'OTP_start_cfg2', I2C_ADD)
+w1byte_pat(44, 0x75, 'OTP_end_cfg2', I2C_ADD)
 
-w1byte_pat(42, 0x70, 'OTP_start_cfg3', I2C_ADD)
-w1byte_pat(44, 0x94, 'OTP_end_cfg3', I2C_ADD)
+w1byte_pat(42, 0x76, 'OTP_start_cfg3', I2C_ADD)
+w1byte_pat(44, 0x9c, 'OTP_end_cfg3', I2C_ADD)
 
-otpStrEndLut = [0x95, 0x01, 0x14, 0x30, 0x30]
+otpStrEndLut = [0x9d, 0x01, 0x1c, 0x30, 0x30]
 wbytes_pat(otpStrEndLut, "OTP_LUT", I2C_ADD, 42)
 
 w1byte_pat(45, '00', 'CSR_bn_addr0', I2C_ADD)

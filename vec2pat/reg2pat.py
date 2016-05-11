@@ -155,10 +155,12 @@ class WritePat(object):
         for i in range(int(startbyte), int(stopbyte)):
             self.write_byte(hexlist[i], 'write_byte%s' % hex(i))
 
-    def rbyte_lst(self, hexlist, startbyte=0, stopbyte='all'):
+    def rbyte_lst(self, hexlist, startbyte=0, stopbyte='all', offset=0):
         if stopbyte == 'all':
             stopbyte = len(hexlist)
-        self.write_byte(int(startbyte), 'Start_r_byte')
+        if offset == 0:
+            offset = startbyte
+        self.write_byte(int(offset), 'Start_r_byte')
         self.write_pat('noop', 1, 1)
         self.write_pat('bstar', 1, 1)
         self.write_byte(int(self.i2c_address, 16) + 1, 'Restart')

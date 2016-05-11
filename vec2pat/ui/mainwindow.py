@@ -66,9 +66,10 @@ class Window(QtGui.QMainWindow, Ui_MainWindow):
             return
         pat = reg2pat.WritePat(os.path.join(self.path_pat.text() + "/%s.atp" % self.pat_name.text()),
                                str(self.i2c_add.currentText()))
+        pat.vco_mon = True
         pat.write_header(self.pat_name.text(), self.scl.text(), self.sda.text())
         pat.wbyte_lst(reg_lst, offset=self.offset.text())
-        pat.rbyte_lst(reg_lst)
+        pat.rbyte_lst(reg_lst, offset=self.offset.text())
         pat.close_pat()
 
     def compile_btn(self):
