@@ -60,6 +60,7 @@ class Window(QtGui.QMainWindow, Ui_MainWindow):
             reg_lst = self.pat_input.toPlainText().split()
         except (AttributeError, TypeError):
             print("Type Error Please Check Input Pattern")
+            return
         if str(self.i2c_add.currentText()) == '' or self.scl.text() == '' or self.sda.text() == '' \
                 or self.pat_name.text() == '' or str(self.numofpat.currentText()) == ''\
                 or self.offset.text() == '':
