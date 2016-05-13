@@ -22,6 +22,7 @@ class Window(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(self.__class__, self).__init__()
         self.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon('IDT.ico'))
         # super(Window, self).__init__()
         # uic.loadUi("mainwindow.ui", self)
         # ======================VC5 Tab=====================================#
