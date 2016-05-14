@@ -1,16 +1,22 @@
 import win32com.client as win32
-
-import comtypes, comtypes.client
+import os
 
 xl = win32.gencache.EnsureDispatch('Excel.Application')
-xl.Visible = True
-ss = xl.Workbooks.Open(r"C:\Users\yguo\Documents\GitHub\vec2pat\vec2pat\tests\5P49V5901B_FT_802_25C_rev0.xls")
-sh = ss.ActiveSheet
+xl.Visible = False
+currpath = os.getcwd()
+workbook = xl.Workbooks.Open(currpath + "\\5P49V5901B_FT_802_25C_rev0.xls")
+xlmodule = workbook.VBProject.VBComponents.Add(1)
+conf = 1
 
-xlmodule = ss.VBProject.VBComponents.Add(1)  # vbext_ct_StdModule
+sCode = '''
+Public Sub UpdateConfig
+Config_en(0) = %d
 
-sCode = '''sub VBAMacro()
-       msgbox "VBA Macro called"
-      end sub'''
+
+
+
+end sub
+''' % conf
 
 xlmodule.CodeModule.AddFromString(sCode)
+workbook.Close(True, currpath + "\\test.xls")
