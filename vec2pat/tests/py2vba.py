@@ -31,75 +31,7 @@ class py2vba(object):
             scode += "\n"
             scode += "\nREFclk(" + n + ") = Fout0(" + n + ")"
 
-        sCode = '''
-        Public Sub UpdateConfig()
-        I2C_add = "%s"
-        Config_en(0) = %d
-        Config_en(1) = %d
-        Config_en(2) = %d
-        Config_en(3) = %d
-        Fout0(0) = %d
-        Fout0(1) = %d
-        Fout0(2) = %d
-        Fout0(3) = %d
-
-        REFclk(0) = Fout0(0)
-        REFclk(1) = Fout0(1)
-        REFclk(2) = Fout0(2)
-        REFclk(2) = Fout0(3)
-
-        Fout1(0) = %d
-        Fout2(0) = %d
-        Fout3(0) = %d
-        Fout4(0) = %d
-        Sout1(0) = %d
-        Sout2(0) = %d
-        Sout3(0) = %d
-        Sout4(0) = %d
-        Fout1b(0) = %d
-        Fout2b(0) = %d
-        Fout3b(0) = %d
-        Fout4b(0) = %d
-
-        Fout1(1) = %d
-        Fout2(1) = %d
-        Fout3(1) = %d
-        Fout4(1) = %d
-        Sout1(1) = %d
-        Sout2(1) = %d
-        Sout3(1) = %d
-        Sout4(1) = %d
-        Fout1b(1) = %d
-        Fout2b(1) = %d
-        Fout3b(1) = %d
-        Fout4b(1) = %d
-
-        Fout1(2) = %d
-        Fout2(2) = %d
-        Fout3(2) = %d
-        Fout4(2) = %d
-        Sout1(2) = %d
-        Sout2(2) = %d
-        Sout3(2) = %d
-        Sout4(2) = %d
-        Fout1b(2) = %d
-        Fout2b(2) = %d
-        Fout3b(2) = %d
-        Fout4b(2) = %d
-
-        Fout1(3) = %d
-        Fout2(3) = %d
-        Fout3(3) = %d
-        Fout4(3) = %d
-        Sout1(3) = %d
-        Sout2(3) = %d
-        Sout3(3) = %d
-        Sout4(3) = %d
-        Fout1b(3) = %d
-        Fout2b(3) = %d
-        Fout3b(3) = %d
-        Fout4b(3) = %d
-
+        scode += '''
         For i = 0 To 3
             If Sout1(i) < 0 Then Fout1(i) = Fout1(i) + Fout1(i) * Sout1(i) / 100 / 2
             If Sout2(i) < 0 Then Fout2(i) = Fout2(i) + Fout2(i) * Sout2(i) / 100 / 2
@@ -117,7 +49,7 @@ class py2vba(object):
 
 
         end sub
-        ''' % ()
+        '''
 
     def close_wb(self):
         self.workbook.Close(True, currpath + "\\test.xls")
