@@ -36,6 +36,12 @@ class py2vba(object):
                 self.src_str += "Sout2(" + str(cfgnum) + ") = " + str(self.sout[cfgnum][1]) + '\n'
                 self.src_str += "Sout3(" + str(cfgnum) + ") = " + str(self.sout[cfgnum][2]) + '\n'
                 self.src_str += "Sout4(" + str(cfgnum) + ") = " + str(self.sout[cfgnum][3]) + '\n'
+                self.src_str += "OPTout0(" + str(cfgnum) + ") = CMOS\n"
+                self.src_str += "OPTout1(" + str(cfgnum) + ") = " + str(self.tout[cfgnum][0]) + '\n'
+                self.src_str += "OPTout2(" + str(cfgnum) + ") = " + str(self.tout[cfgnum][1]) + '\n'
+                self.src_str += "OPTout3(" + str(cfgnum) + ") = " + str(self.tout[cfgnum][2]) + '\n'
+                self.src_str += "OPTout4(" + str(cfgnum) + ") = " + str(self.tout[cfgnum][3]) + '\n'
+                self.src_str += "Prim_clock(" + str(cfgnum) + ") = " + str
         self.src_str += '''
 For i = 0 To 3
     If Sout1(i) < 0 Then Fout1(i) = Fout1(i) + Fout1(i) * Sout1(i) / 100 / 2
