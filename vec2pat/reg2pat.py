@@ -48,19 +48,19 @@ def w1byte_pat(bytenum, byte, name='w1byte', i2c_address='D4'):
     w1byte.close_pat()
 
 
-def wbytes_pat(hexlist, name, i2c_address='D4', str_byte=0):
+def wbytes_pat(hexlist, name, i2c_address='D4', str_byte=0, offset=0):
     wbytes = WritePat('%s.atp' % name, i2c_address)
     wbytes.write_header(name)
-    wbytes.wbyte_lst(hexlist, str_byte)
+    wbytes.wbyte_lst(hexlist, str_byte, offset=offset)
     wbytes.close_pat()
 
 
-def rbytes_pat(hexlist, name, i2c_address='D4', vcomon=True, vco_bandn=0x11, str_byte=0):
+def rbytes_pat(hexlist, name, i2c_address='D4', vcomon=True, vco_bandn=0x11, str_byte=0, offset=0):
     wbytes = WritePat('%s.atp' % name, i2c_address)
     wbytes.vco_mon = vcomon
     wbytes.vco_band_byte = vco_bandn
     wbytes.write_header(name)
-    wbytes.rbyte_lst(hexlist, str_byte)
+    wbytes.rbyte_lst(hexlist, str_byte, offset=offset)
     wbytes.close_pat()
 
 
@@ -68,8 +68,11 @@ class WritePat(object):
     vco_band_byte = 17
     vco_mon = False
 
-    def __init__(self, pat_file, i2c_address='D4'):
-        self.pat_path = os.getcwd()
+    def __init__(self, pat_file, i2c_address='D4', pat_path=None):
+        if pat_path is None:
+            self.pat_path = os.getcwd()
+        else:
+            self.pat_path = pat_path
         self.pat_file = pat_file
         self.i2c_address = i2c_address
         self.hexinput = i2c_address
