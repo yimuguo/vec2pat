@@ -3,7 +3,7 @@ __author__ = 'yguo'
 VC3_FLAG = 'N'
 VC3_LOG_DEL_FLAG = 'N'
 I2C_ADD = 'D6'
-os.chdir("S:\Test_Eng\J750_HW_SW\9FGSxxxx\9FGS9092\\patterns\\9FGS9093\\%s" % I2C_ADD)
+os.chdir("S:\Test_Eng\J750_HW_SW\9FGSxxxx\\patterns\\9FGS9093\\%s" % I2C_ADD)
 
 
 OutputsHiz_hex = ['E0', '5F', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44', '8F', '61', '44']
@@ -16,7 +16,7 @@ LU_code = re.split('\s+', LU_code_string)
 wbytes_pat(LU_code, 'LU_Write', I2C_ADD)
 rbytes_pat(LU_code, 'LU_Read', I2C_ADD)
 
-strCFG0 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8E 8E 84 22 09 0B 85 01 66 00 81 00 A0 FC AF 00 0A 24 19 19 00 00 F5 61 20 50'
+strCFG0 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 84 22 09 0B 1E 01 4D 00 81 00 A0 FC AF 00 0A 24 19 19 00 00 F5 61 20 50'
 config0 = strCFG0.split()
 config0[26] = 'C0'
 config0[27] = 'FC'
@@ -24,7 +24,7 @@ config0[27] = int(config0[27], 16) & 0b11110111
 wbytes_pat(config0, 'writeCFG0', I2C_ADD)
 rbytes_pat(config0, 'readCFG0', I2C_ADD, False, 26)
 
-strCFG1 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8E 8E 04 22 09 00 00 01 66 00 81 00 A0 FC AF 00 0A 24 19 19 00 00 F5 61 20 50'
+strCFG1 = 'E0 CF 8E 02 14 8E 02 14 8E 02 14 8E 02 14 8D 8D 04 22 09 00 00 01 4D 00 81 00 A0 FC AF 00 0A 24 19 19 00 00 F5 61 20 50'
 config1 = strCFG1.split()
 config1[26] = 'C0'
 config1[27] = 'FC'
